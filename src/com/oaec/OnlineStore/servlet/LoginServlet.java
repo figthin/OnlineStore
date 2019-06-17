@@ -3,6 +3,9 @@ package com.oaec.OnlineStore.servlet;
 import com.alibaba.fastjson.JSON;
 import com.oaec.OnlineStore.dao.UserDao;
 import com.oaec.OnlineStore.dao.impl.UserDaoImpl;
+import com.oaec.OnlineStore.entity.User;
+import com.oaec.OnlineStore.service.UserService;
+import com.oaec.OnlineStore.service.impl.UserServiceImpl;
 
 
 import javax.servlet.ServletException;
@@ -18,31 +21,35 @@ import java.util.Map;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private UserDao userDao = new UserDaoImpl();
+    private UserService userService = new UserServiceImpl();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        String username = req.getParameter("username");
+        String phone = req.getParameter("phone");
         String password = req.getParameter("password");
         String uri = req.getParameter("uri");
         HttpSession session = req.getSession();
-        Map<String, Object> map = userDao.login(username, password);
-
+        Map<String, Object> login = userService.login(phone, password);
         Map<String, Object> json = new HashMap<>();
-        if(map.containsKey("error")){
-            json.put("result",false);
-            json.put("error",map.get("error"));
-        }else{
+        if(!login.containsKey("error")){
             json.put("result",true);
-            session.setAttribute("user",map.get("succ"));
-            if (uri!=null){
+            session.setAttribute("user",login);
+        }else{
+            json.put("result",false);
+            json.put("error",login.get("error"));
+            /*if (uri!=null){
                 json.put("uri",uri);
-            }
+            }*/
         }
         String s = JSON.toJSONString(json);
         writer.println(s);
         writer.close();
 
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
     }
 }

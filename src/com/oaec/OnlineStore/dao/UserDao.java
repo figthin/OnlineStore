@@ -8,10 +8,11 @@ import java.util.Map;
 
 public interface UserDao {
 
-	Map<String, Object> login(String account, String password);
+	Map<String, Object> queryByTel(String tel);
 
-	Map<String, Object> register(User user, String password2);
+	Integer doInsert(User user);
 
+	Map<String, Object> findPassword(String account, String tel);
 	/*List<User> allUser();
 
 	User queryUserById(int userId);
