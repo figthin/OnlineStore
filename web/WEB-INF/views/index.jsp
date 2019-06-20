@@ -3,7 +3,8 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-<head>
+<%@include file="_head.jsp"%>
+<%--<head>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="${path}/static/favicon.ico">
 	<link rel="stylesheet" href="${path}/static/css/iconfont.css">
@@ -19,7 +20,7 @@
 	<script src="${path}/static/js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
 	<title>U袋网</title>
 
-</head>
+</head>--%>
 <body>
 	<!-- 顶部tab -->
 	<div class="tab-header">
@@ -38,7 +39,7 @@
 					<a href="${path}/register">注册</a>
 				</c:if>
 				<a href="${path}/welcome">我的U袋</a>
-				<a href="${path}/]order">我的订单</a>
+				<a href="${path}/order">我的订单</a>
 				<a href="${path}/integral">积分平台</a>
 			</div>
 		</div>
@@ -47,10 +48,20 @@
 	<div class="top-search">
 		<div class="inner">
 			<a class="logo" href="${path}/index"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
-			<%@ include file="_form.jsp"%>
+			<div class="search-box">
+				<form class="input-group" method="get" action="${path}/item_category">
+					<input placeholder="输入关键字" value="${param.name}" name="name" type="text">
+					<span class="input-group-btn">
+						<button type="submit">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+					</span>
+				</form>
+			</div>
 			<div class="cart-box">
 				<a href="${path}/cart" class="cart-but">
-					<i class="iconfont icon-shopcart cr fz16"></i> 购物车 0 件
+<%--                    <div>${requestScope.productNumber}</div>--%>
+					<i class="iconfont icon-shopcart cr fz16"></i> 购物车 ${requestScope.productNumber} 件
 				</a>
 			</div>
 		</div>

@@ -17,7 +17,6 @@
 	<script src="${path}/static/js/global.js" charset="UTF-8"></script>
 	<script src="${path}/static/js/login.js" charset="UTF-8"></script>
 	<title>U袋网 - 登录 / 注册</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css"/>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
 
@@ -30,19 +29,22 @@
 				// console.log($(this).parent()[0].id);
 				// console.log($(':submit').parent()[0].id);
 				var data=$("#"+$(this).parent()[0].id).serialize();
+				console.log(data);
                 // return false;
 				$.ajax({
 					url:$(this).text() === '登录' ? "${path}/login" : "${path}/register",
 					type:"post",
 					data:data,
 					success:function (res) {
-					    $("input").val("");
+						// return false;
+						// return;
+					    // $("input").val("");
 						if (res.result) {
-							// if (res.uri){
-							// 	location = res.uri;
-							// }else{
+							if (res.uri){
+								location = res.uri;
+							}else{
 								location = "${path}/index";
-							// }
+							}
 						}else{
                             $(this)[0].url === '/OnlineStore/register' ? $(".errorMessage")[1].style.display="block" : $(".errorMessage")[0].style.display="block";
 							$(".errorMessage").val(res.error);
@@ -57,7 +59,7 @@
 </head>
 <body>
 	<div class="public-head-layout container">
-		<a class="logo" href="${path}/index"><img src="images/icons/logo.jpg" alt="U袋网" class="cover"></a>
+		<a class="logo" href="${path}/index"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
 	</div>
 	<div style="background:url(${path}/static/images/login_bg.jpg) no-repeat center center; ">
 		<div class="login-layout container">
@@ -68,6 +70,9 @@
 				<div class="tabs_container">
 					<form class="tabs_form" action="${path}/login" method="post" id="login_form">
 						<input style="background-color: #ffebeb; color: red; display: none" class="errorMessage" class="form-control phone" type="text" value="">
+						<c:if test="${param.uri != null}">
+							<input type="hidden" name="uri" value="${param.uri}"/>
+						</c:if>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">

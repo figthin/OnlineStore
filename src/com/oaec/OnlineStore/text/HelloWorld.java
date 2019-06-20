@@ -18,8 +18,9 @@ import java.util.Map;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        CartDao cartDao = new CartDaoImpl();
-        Map<String, Object> map = cartDao.queryTotalPrice(1004);
-        System.out.println("map = " + map);
+        CartServiceImpl cartService = new CartServiceImpl();
+        Map<String, Object> total = cartService.getTotal(1004, new String[]{"5003"});
+        System.out.println("total = " + total);
+
     }
 }

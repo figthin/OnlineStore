@@ -6,24 +6,124 @@
 <html lang="zh-cmn-Hans">
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="../../favicon.ico">
-	<link rel="stylesheet" href="css/iconfont.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="js/swiper.min.js" charset="UTF-8"></script>
-	<script src="js/global.js" charset="UTF-8"></script>
-	<script src="js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
+	<link rel="shortcut icon" href="${path}/favicon.ico">
+	<link rel="stylesheet" href="${path}/static/css/iconfont.css">
+	<link rel="stylesheet" href="${path}/static/css/global.css">
+	<link rel="stylesheet" href="${path}/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${path}/static/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="${path}/static/css/swiper.min.css">
+	<link rel="stylesheet" href="${path}/static/css/styles.css">
+	<script src="${path}/static/js/jquery.1.12.4.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/bootstrap.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/swiper.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/global.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
 	<title>U袋网</title>
-	<script src = "${path}/static/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<%--	<script src = "${path}/static/js/jquery-1.8.3.min.js" type="text/javascript"></script>--%>
 	<script type="text/javascript">
+		function queryTotal() {
+			var inputs = $(".check-individual:checked");
+			var url = "${path}/cartTotal?";
+			inputs.each(function () {
+				url += "cartId="+this.value+"&";
+				// console.log(this);
+			});
+			$.ajax({
+				url:url,
+				type:"get",
+				success:function (res) {
+					$("#alreadyCheckedProduct").text(res.TOTALAMOUNT);
+					$(".fz24").text(res.ALLTOTALPRICE);
+				}
+			});
+		}
+		function updateAmount(e){
+			var tr = $(e).parent().parent().parent();
+			tr.children(":first").children().children()[0].checked = true;
+			var cartId = tr.children(":first").children().children()[0].value;
+			var inputs = tr.children(":last").children("input");
+			var productId = inputs[0].value;
+			var color = inputs[1].value;
+			var size = inputs[2].value;
+			var input = $(e).parent().children(":text");
+			var action = "add";
+			if ($(e).val() === "-"){
+				action = "sub";
+			}
+			$.ajax({
+				url: "${path}/updateAmount",
+				type: "get",
+				data: {
+					cartId:cartId,
+					productId:productId,
+					color:color,
+					size:size,
+					action:action
+				},
+				success:function (res) {
+					tr.children(".productTotalPrice")[0].innerHTML = res.totalPrice.TOTALPRICE
+					// console.log(res.totalPrice.TOTALPRICE);
+					// console.log(tr.children(".productTotalPrice")[0].innerHTML = res.totalPrice.TOTALPRICE);
+					var amount = input.val();
+					if (res.succ){
+						if (action === "add"){
+							input.val(++amount);
+							// price =  parseFloat(price);
+							// totalPrice = parseFloat(totalPrice);
+							// td.text((input.val() * price).toFixed(1));
+							// span.innerText = totalPrice + price;
+							// inputs[4].value = totalPrice + price;
+						}else{
+							if (input.val() === "1"){
+								alert("不能再减少了哦!")
+								return;
+							}
+							// price =  parseFloat(price);
+							// totalPrice = parseFloat(totalPrice);
+							input.val(--amount);
+							// td.text((input.val() * price).toFixed(1));
+							// span.innerText = totalPrice - price;
+							<%--span.innerHTML = <fmt:formatNumber value="totalPrice - price"></fmt:formatNumber>;--%>
+							// console.log();
+							// inputs[4].value = totalPrice - price;
+						}
+					}else {
+						alert("不能再减少了哦!")
+						return;
+					}
+					var inputs = $(".check-individual:checked");
+					queryTotal();
+				}
+			});
+
+			/*if (inputs.size()>0){
+				queryTotal();
+			}else{
+				$("#alreadyCheckedProduct").text(0);
+				$(".fz24").text("￥0.00");
+			}*/
+		}
 		$(function () {
-			$("#delete").click(function () {
-				alert("hh");
+			$(".delete").click(function () {
+				var tr = $(this).parent().parent();
+				var inputs = tr.children(":last").children("input");
+				var productId = inputs[0].value;
+				var color = inputs[1].value;
+				var size = inputs[2].value;
+				$.ajax({
+					url:"${path}/cart/delete",
+					type:"get",
+					data:{
+						productId:productId,
+						color:color,
+						size:size
+					},
+					success:function (res) {
+						tr.remove();
+					}
+				});
+				return false;
+
 			});
 		});
 	</script>
@@ -55,7 +155,7 @@
 	<div class="bgf5 clearfix">
 		<div class="top-user">
 			<div class="inner">
-				<a class="logo" href="${path}/index"><img src="images/icons/logo.jpg" alt="U袋网" class="cover"></a>
+				<a class="logo" href="${path}/index"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
 				<div class="title">购物车</div>
 			</div>
 		</div>
@@ -74,32 +174,39 @@
 								<th width="300">商品信息</th>
 								<th width="150">单价</th>
 								<th width="200">数量</th>
-								<th width="200">现价</th>
+								<th width="200">小计</th>
 								<th width="80">操作</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${requestScope.products}" var="product">
 								<tr>
-									<th scope="row">
-										<label class="checked-label"><input type="checkbox"><i></i>
+									<td scope="row">
+										<label class="checked-label"><input class="check-individual" value="${product.CART_ID}" type="checkbox"><i></i>
 											<div class="img"><img src=${path}/${product.URL} alt=${product.NAME} class="cover"></div>
 										</label>
-									</th>
+									</td>
 									<td>
 										<div class="name ep3">${product.NAME}</div>
 										<div class="type c9">颜色分类：${product.COLOR}  尺码：${product.CART_SIZE}</div>
 									</td>
-									<td>${product.CARTPRICE}</td>
+									<td class="productPrice">${product.PRICE}</td>
 									<td>
 										<div class="cart-num__box">
-											<input type="button" class="sub" value="-">
-											<input type="text" class="val" value="${product.AMOUNT}" maxlength="2">
-											<input type="button" class="add" value="+">
+											<input type="button" class="sub" value="-" onclick="updateAmount(this)">
+											<input readonly type="text" class="val" value="${product.AMOUNT}" maxlength="2">
+											<input type="button" class="add" value="+" onclick="updateAmount(this)">
 										</div>
 									</td>
-									<td>${product.PRODUCTPRICE}</td>
-									<td><a href="">删除</a></td>
+									<td class="productTotalPrice">${product.PRICE * product.AMOUNT}</td>
+									<td>
+										<input type="hidden" value="${product.PRODUCT_ID}"/>
+										<input type="hidden" value="${product.COLOR}"/>
+										<input type="hidden" value="${product.CART_SIZE}"/>
+										<input type="hidden" value="${product.PRICE}"/>
+										<input type="hidden" value="${requestScope.total.get('TOTAL')}"/>
+										<a class="delete" href="">删除</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -109,11 +216,11 @@
 					</div>
 					<div class="checkbox shopcart-total">
 						<label><input type="checkbox" class="check-all"><i></i> 全选</label>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="delete" href="">删除</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="deleteAll" href="">删除</a>
 						<div class="pull-right">
-							已选商品 <span>${requestScope.products.size()}</span> 件
+							已选商品 <span id="alreadyCheckedProduct"><%--${requestScope.products.size()}--%>0</span> 件
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合计（不含运费）
-							<b class="cr"><span class="fz24"><fmt:formatNumber value="${requestScope.total.get('TOTAL')}" type="CURRENCY"></fmt:formatNumber> </span></b>
+							<b class="cr"><span class="fz24"><%--<fmt:formatNumber value="${requestScope.total.get('TOTAL')}" type="CURRENCY"></fmt:formatNumber>--%>￥0.00</span></b>
 						</div>
 					</div>
 					<script>
@@ -124,16 +231,30 @@
 							$check_all.on('change', function() {
 								$check_all.prop('checked', $(this).prop('checked'));
 								$item_checkboxs.prop('checked', $(this).prop('checked'));
+								var inputs = $(".check-individual:checked");
+								if (inputs.size()>0){
+									queryTotal();
+								} else{
+									$("#alreadyCheckedProduct").text(0);
+									$(".fz24").text("￥0.00");
+								}
 							});
 							// 点击选择
 							$item_checkboxs.on('change', function() {
+								var inputs = $(".check-individual:checked");
+								if (inputs.size()>0){
+									queryTotal();
+								}else{
+									$("#alreadyCheckedProduct").text(0);
+									$(".fz24").text("￥0.00");
+								}
 								var flag = true;
 								$item_checkboxs.each(function() {
 									if (!$(this).prop('checked')) { flag = false }
 								});
 								$check_all.prop('checked', flag);
 							});
-							// 个数限制输入数字
+							/*// 个数限制输入数字
 							$('input.val').onlyReg({reg: /[^0-9.]/g});
 							// 加减个数
 							$('.cart-num__box').on('click', '.sub,.add', function() {
@@ -143,7 +264,7 @@
 								} else {
 									$(this).siblings('.val').val(Math.max((value -= 1),1));
 								}
-							});
+							});*/
 						});
 					</script>
 				</form>
@@ -197,16 +318,16 @@
 		<div class="footer-tags">
 			<div class="tags-box inner">
 				<div class="tag-div">
-					<img src="images/icons/footer_1.gif" alt="厂家直供">
+					<img src="${path}/static/images/icons/footer_1.gif" alt="厂家直供">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_2.gif" alt="一件代发">
+					<img src="${path}/static/images/icons/footer_2.gif" alt="一件代发">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_3.gif" alt="美工活动支持">
+					<img src="${path}/static/images/icons/footer_3.gif" alt="美工活动支持">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_4.gif" alt="信誉认证">
+					<img src="${path}/static/images/icons/footer_4.gif" alt="信誉认证">
 				</div>
 			</div>
 		</div>

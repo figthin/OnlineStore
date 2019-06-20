@@ -8,5 +8,20 @@ public interface CartDao {
 
     Map<String,Object> queryTotalPrice(Integer userId);
 
-    Integer doDelete(Integer cartId);
+    Integer doDelete(Map<String, Object> map);
+
+    Integer doInsert(Map<String, Object> map);
+
+    Map<String,Object> queryByProduct(Map<String, Object> map);
+
+    Integer updateAmount(Map<String, Object> map);
+
+    Integer addAmount(Map<String, Object> map);
+
+    Integer subAmount(Map<String, Object> map);
+
+    Map<String,Object> queryTotal(Integer userId, String[] cartIds);
+
+    Map<String,Object> queryTotalPrice(Integer cartId,Integer productId);
+
 }

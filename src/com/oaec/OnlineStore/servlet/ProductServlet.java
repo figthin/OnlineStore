@@ -24,7 +24,6 @@ public class ProductServlet extends HttpServlet {
         Map<String,Object> product = productService.queryById(productId);
         List<Map<String, Object>> evaluations = evaluationService.query(productId);
         Map<String, List<Map<String, Object>>> map = evaluationService.queryGrade(productId);
-        System.out.println(map);
         List<Map<String, Object>> goodEvaluation = map.get("好评");
         List<Map<String, Object>> middleEvaluation = map.get("中评");
         List<Map<String, Object>> badEvaluation = map.get("好评");
@@ -32,7 +31,6 @@ public class ProductServlet extends HttpServlet {
         req.setAttribute("middleEvaluation",middleEvaluation);
         req.setAttribute("badEvaluation",badEvaluation);
         req.setAttribute("evaluations",evaluations);
-        System.out.println(evaluations);
         req.setAttribute("product",product);
         req.getRequestDispatcher("/WEB-INF/views/item_show.jsp").forward(req,resp);
     }

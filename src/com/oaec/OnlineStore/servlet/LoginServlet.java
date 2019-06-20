@@ -35,12 +35,12 @@ public class LoginServlet extends HttpServlet {
         if(!login.containsKey("error")){
             json.put("result",true);
             session.setAttribute("user",login);
+            if (uri!=null){
+                json.put("uri",uri);
+            }
         }else{
             json.put("result",false);
             json.put("error",login.get("error"));
-            /*if (uri!=null){
-                json.put("uri",uri);
-            }*/
         }
         String s = JSON.toJSONString(json);
         writer.println(s);

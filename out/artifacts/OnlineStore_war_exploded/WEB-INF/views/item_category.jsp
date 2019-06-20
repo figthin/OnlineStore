@@ -4,24 +4,10 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-<head>
-	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="${path}/favicon.ico">
-	<link rel="stylesheet" href="css/iconfont.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="js/swiper.min.js" charset="UTF-8"></script>
-	<script src="js/global.js" charset="UTF-8"></script>
-	<script src="js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
-	<title>U袋网</title>
-</head>
+<%@include file="_head.jsp"%>
 <body>
-	<!-- 顶部tab -->
+	<%@include file="_nav.jsp"%>
+	<%--<!-- 顶部tab -->
 	<div class="tab-header">
 		<div class="inner">
 			<div class="pull-left">
@@ -30,8 +16,13 @@
 				<a href="temp_article/udai_article4.html">帮助中心</a>
 			</div>
 			<div class="pull-right">
-				<a href="login.html"><span class="cr">登录</span></a>
-				<a href="login.html?p=register">注册</a>
+				<c:if test="${sessionScope.user != null}">
+					<a href="${path}/logout"><span class="cr">退出登录</span></a>
+				</c:if>
+				<c:if test="${sessionScope.user == null}">
+					<a href="${path}/login"><span class="cr">登录</span></a>
+					<a href="${path}/register">注册</a>
+				</c:if>
 				<a href="udai_welcome.html">我的U袋</a>
 				<a href="udai_order.html">我的订单</a>
 				<a href="udai_integral.html">积分平台</a>
@@ -41,11 +32,11 @@
 	<!-- 搜索栏 -->
 	<div class="top-search">
 		<div class="inner">
-			<a class="logo" href="index"><img src="images/icons/logo.jpg" alt="U袋网" class="cover"></a>
-			<%@ include file="_form.jsp"%>
+			<a class="logo" href="index"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
+			<%@ include file="_nav.jsp"%>
 			<div class="cart-box">
 				<a href="${path}/WEB-INF/views/udai_shopcart.jsp" class="cart-but">
-					<i class="iconfont icon-shopcart cr fz16"></i> 购物车 0 件
+					<i class="iconfont icon-shopcart cr fz16"></i> 购物车 ${requestScope.productNumber} 件
 				</a>
 			</div>
 		</div>
@@ -66,7 +57,7 @@
 				<a href="item_remove.html"><li>实时下架</li></a>
 			</ul>
 		</div>
-	</div>
+	</div>--%>
 	<div class="content inner">
 		<section class="filter-section clearfix">
 			<ol class="breadcrumb">
@@ -186,7 +177,7 @@
                     </c:forEach>
 					<%--<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-002.jpg" alt="霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套" class="cover">
+							<img src="${path}/static/images/temp/M-002.jpg" alt="霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套" class="cover">
 							<div class="name">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 						</a>
 						<div class="middle">
@@ -201,7 +192,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-003.jpg" alt="陇上乐原创传统日常汉服男绣花交领cp情侣非古装春秋" class="cover">
+							<img src="${path}/static/images/temp/M-003.jpg" alt="陇上乐原创传统日常汉服男绣花交领cp情侣非古装春秋" class="cover">
 							<div class="name">陇上乐原创传统日常汉服男绣花交领cp情侣非古装春秋</div>
 						</a>
 						<div class="middle">
@@ -216,7 +207,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-004.jpg" alt="霜天月明 原创传统日常汉服男绣花交领衣裳cp春装单品" class="cover">
+							<img src="${path}/static/images/temp/M-004.jpg" alt="霜天月明 原创传统日常汉服男绣花交领衣裳cp春装单品" class="cover">
 							<div class="name">霜天月明 原创传统日常汉服男绣花交领衣裳cp春装单品</div>
 						</a>
 						<div class="middle">
@@ -231,7 +222,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-005.jpg" alt="琅轩日常汉服男龙纹绣花短褙子气质传统外套春秋非古装" class="cover">
+							<img src="${path}/static/images/temp/M-005.jpg" alt="琅轩日常汉服男龙纹绣花短褙子气质传统外套春秋非古装" class="cover">
 							<div class="name">琅轩日常汉服男龙纹绣花短褙子气质传统外套春秋非古装</div>
 						</a>
 						<div class="middle">
@@ -246,7 +237,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-006.jpg" alt="峥嵘 原创设计传统日常汉服男绣花唐制圆领袍春秋非古装" class="cover">
+							<img src="${path}/static/images/temp/M-006.jpg" alt="峥嵘 原创设计传统日常汉服男绣花唐制圆领袍春秋非古装" class="cover">
 							<div class="name">峥嵘 原创设计传统日常汉服男绣花唐制圆领袍春秋非古装</div>
 						</a>
 						<div class="middle">
@@ -261,7 +252,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-007.jpg" alt="陇上乐原创传统日常汉服男绣花单大氅大袖衫cp情侣春秋" class="cover">
+							<img src="${path}/static/images/temp/M-007.jpg" alt="陇上乐原创传统日常汉服男绣花单大氅大袖衫cp情侣春秋" class="cover">
 							<div class="name">陇上乐原创传统日常汉服男绣花单大氅大袖衫cp情侣春秋</div>
 						</a>
 						<div class="middle">
@@ -276,7 +267,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-008.jpg" alt="擎苍原创传统绣花交领衣裳春装单品日常汉服男非 古装" class="cover">
+							<img src="${path}/static/images/temp/M-008.jpg" alt="擎苍原创传统绣花交领衣裳春装单品日常汉服男非 古装" class="cover">
 							<div class="name">擎苍原创传统绣花交领衣裳春装单品日常汉服男非 古装</div>
 						</a>
 						<div class="middle">
@@ -291,7 +282,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-009.jpg" alt="英华原创品牌日常汉服弓道服绣花情侣cp装男款交领衣裳" class="cover">
+							<img src="${path}/static/images/temp/M-009.jpg" alt="英华原创品牌日常汉服弓道服绣花情侣cp装男款交领衣裳" class="cover">
 							<div class="name">英华原创品牌日常汉服弓道服绣花情侣cp装男款交领衣裳</div>
 						</a>
 						<div class="middle">
@@ -306,7 +297,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-010.jpg" alt="怀楚原创品牌汉服男绣花日常长中长半臂短打裋褐上衣春夏" class="cover">
+							<img src="${path}/static/images/temp/M-010.jpg" alt="怀楚原创品牌汉服男绣花日常长中长半臂短打裋褐上衣春夏" class="cover">
 							<div class="name">怀楚原创品牌汉服男绣花日常长中长半臂短打裋褐上衣春夏</div>
 						</a>
 						<div class="middle">
@@ -321,7 +312,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-011.jpg" alt="舍竹改良汉服日常汉元素中国民族风男款绣花交领上衣春秋" class="cover">
+							<img src="${path}/static/images/temp/M-011.jpg" alt="舍竹改良汉服日常汉元素中国民族风男款绣花交领上衣春秋" class="cover">
 							<div class="name">舍竹改良汉服日常汉元素中国民族风男款绣花交领上衣春秋</div>
 						</a>
 						<div class="middle">
@@ -336,7 +327,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-012.jpg" alt="乌鹭原创设计日常汉服情侣cp装男款绣花半臂交领春秋" class="cover">
+							<img src="${path}/static/images/temp/M-012.jpg" alt="乌鹭原创设计日常汉服情侣cp装男款绣花半臂交领春秋" class="cover">
 							<div class="name">乌鹭原创设计日常汉服情侣cp装男款绣花半臂交领春秋</div>
 						</a>
 						<div class="middle">
@@ -351,7 +342,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-013.jpg" alt="锦瑟 原创日常汉服男装传统cp情侣装绣花对襟半臂夏款" class="cover">
+							<img src="${path}/static/images/temp/M-013.jpg" alt="锦瑟 原创日常汉服男装传统cp情侣装绣花对襟半臂夏款" class="cover">
 							<div class="name">锦瑟 原创日常汉服男装传统cp情侣装绣花对襟半臂夏款</div>
 						</a>
 						<div class="middle">
@@ -366,7 +357,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-014.jpg" alt="霜天月明新款传统日常汉服男绣花半臂单上衣cp情侣夏装" class="cover">
+							<img src="${path}/static/images/temp/M-014.jpg" alt="霜天月明新款传统日常汉服男绣花半臂单上衣cp情侣夏装" class="cover">
 							<div class="name">霜天月明新款传统日常汉服男绣花半臂单上衣cp情侣夏装</div>
 						</a>
 						<div class="middle">
@@ -381,7 +372,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-015.jpg" alt="琅轩 原创品牌日常汉服男棉麻纯色交领上衣春夏装单品" class="cover">
+							<img src="${path}/static/images/temp/M-015.jpg" alt="琅轩 原创品牌日常汉服男棉麻纯色交领上衣春夏装单品" class="cover">
 							<div class="name">琅轩 原创品牌日常汉服男棉麻纯色交领上衣春夏装单品</div>
 						</a>
 						<div class="middle">
@@ -396,7 +387,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-016.jpg" alt="青鸾原创传统日常汉服男装绣花上衣下裳大氅单品非" class="cover">
+							<img src="${path}/static/images/temp/M-016.jpg" alt="青鸾原创传统日常汉服男装绣花上衣下裳大氅单品非" class="cover">
 							<div class="name">青鸾原创传统日常汉服男装绣花上衣下裳大氅单品非</div>
 						</a>
 						<div class="middle">
@@ -411,7 +402,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-017.jpg" alt="墨染 原创设计改良汉服男竹节棉日常松紧抽绳单裤子百搭" class="cover">
+							<img src="${path}/static/images/temp/M-017.jpg" alt="墨染 原创设计改良汉服男竹节棉日常松紧抽绳单裤子百搭" class="cover">
 							<div class="name">墨染 原创设计改良汉服男竹节棉日常松紧抽绳单裤子百搭</div>
 						</a>
 						<div class="middle">
@@ -426,7 +417,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-018.jpg" alt="飞廉原创品牌传统日常绣花汉服情侣cp装男款交领衣裳" class="cover">
+							<img src="${path}/static/images/temp/M-018.jpg" alt="飞廉原创品牌传统日常绣花汉服情侣cp装男款交领衣裳" class="cover">
 							<div class="name">飞廉原创品牌传统日常绣花汉服情侣cp装男款交领衣裳</div>
 						</a>
 						<div class="middle">
@@ -441,7 +432,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-019.jpg" alt="和如原创设计汉服男女cp情侣装绣花交领襦裙披风大氅" class="cover">
+							<img src="${path}/static/images/temp/M-019.jpg" alt="和如原创设计汉服男女cp情侣装绣花交领襦裙披风大氅" class="cover">
 							<div class="name">和如原创设计汉服男女cp情侣装绣花交领襦裙披风大氅</div>
 						</a>
 						<div class="middle">
@@ -456,7 +447,7 @@
 					</div>
 					<div class="item-card">
 						<a href="item_show.html" class="photo">
-							<img src="images/temp/M-020.jpg" alt="白鹭行原创传统日常汉服男装绣花短褙子百搭外套单品春夏" class="cover">
+							<img src="${path}/static/images/temp/M-020.jpg" alt="白鹭行原创传统日常汉服男装绣花短褙子百搭外套单品春夏" class="cover">
 							<div class="name">白鹭行原创传统日常汉服男装绣花短褙子百搭外套单品春夏</div>
 						</a>
 						<div class="middle">
@@ -494,16 +485,16 @@
 						<span class="c6">爆款推荐</span>
 					</div>
 					<div class="picked-box">
-						<a href="" class="picked-item"><img src="images/temp/S-001.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-002.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-003.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-004.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-005.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-006.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-007.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-008.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-009.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
-						<a href="" class="picked-item"><img src="images/temp/S-010.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-001.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-002.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-003.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-004.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-005.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-006.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-007.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-008.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-009.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
+						<a href="" class="picked-item"><img src="${path}/static/images/temp/S-010.jpg" alt="" class="cover"><span class="look_price">¥134.99</span></a>
 					</div>--%>
 				</div>
 			</div>
@@ -556,16 +547,16 @@
 		<div class="footer-tags">
 			<div class="tags-box inner">
 				<div class="tag-div">
-					<img src="images/icons/footer_1.gif" alt="厂家直供">
+					<img src="${path}/static/images/icons/footer_1.gif" alt="厂家直供">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_2.gif" alt="一件代发">
+					<img src="${path}/static/images/icons/footer_2.gif" alt="一件代发">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_3.gif" alt="美工活动支持">
+					<img src="${path}/static/images/icons/footer_3.gif" alt="美工活动支持">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_4.gif" alt="信誉认证">
+					<img src="${path}/static/images/icons/footer_4.gif" alt="信誉认证">
 				</div>
 			</div>
 		</div>

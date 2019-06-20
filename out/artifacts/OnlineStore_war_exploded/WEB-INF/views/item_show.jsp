@@ -4,93 +4,65 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-<head>
+<%@include file="_head.jsp"%>
+<%--<head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="../../favicon.ico">
-	<link rel="stylesheet" href="css/iconfont.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="js/swiper.min.js" charset="UTF-8"></script>
-	<script src="js/global.js" charset="UTF-8"></script>
-	<script src="js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
+	<link rel="shortcut icon" href="${path}/favicon.ico">
+	<link rel="stylesheet" href="${path}/static/css/iconfont.css">
+	<link rel="stylesheet" href="${path}/static/css/global.css">
+	<link rel="stylesheet" href="${path}/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${path}/static/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="${path}/static/css/swiper.min.css">
+	<link rel="stylesheet" href="${path}/static/css/styles.css">
+	<script src="${path}/static/js/jquery.1.12.4.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/bootstrap.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/swiper.min.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/global.js" charset="UTF-8"></script>
+	<script src="${path}/static/js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
 	<title>U袋网</title>
-</head>
+</head>--%>
+<%--<script type="text/javascript" src="${path}/static/js/jquery-1.8.3.min.js"></script>--%>
+<script type="text/javascript">
+	$(function () {
+		$("#btn-add").click(function () {
+			var productId = ${param.productId};
+			var amount = $("#cart-product-amount").val();
+			var color = $("#cart-product-cololr .on").attr('data-value');
+			var size = $("#cart-product-size .on").attr('data-value');
+			if(color == null || size == null){
+				alert("请选择商品属性！");
+				return;
+			}
+			$.ajax({
+				url:"${path}/addCart",
+				type:"get",
+				data:{
+					productId:productId,
+					amount:amount,
+					color:color,
+					size:size
+				},
+				success:function (res) {
+					if (res.isLogin == false) {
+						location = "${pageContext.request.contextPath}/login?uri="+res.uri;
+					}else{
+						// window.location.reload();
+						alert("添加成功！");
+					}
+				}
+			})
+			return false;
+		});
+	});
+</script>
 <body>
-	<!-- 顶部tab -->
-	<div class="tab-header">
-		<div class="inner">
-			<div class="pull-left">
-				<div class="pull-left">嗨，欢迎来到<span class="cr">U袋网</span></div>
-				<a href="agent_level.html">网店代销</a>
-				<a href="temp_article/udai_article4.html">帮助中心</a>
-			</div>
-			<div class="pull-right">
-				<a href="login.html"><span class="cr">登录</span></a>
-				<a href="login.html?p=register">注册</a>
-				<a href="udai_welcome.html">我的U袋</a>
-				<a href="udai_order.html">我的订单</a>
-				<a href="udai_integral.html">积分平台</a>
-			</div>
-		</div>
-	</div>
-	<!-- 搜索栏 -->
-	<div class="top-search">
-		<div class="inner">
-			<a class="logo" href="index.html"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
-			<div class="search-box">
-				<form class="input-group">
-					<input placeholder="Ta们都在搜U袋网" type="text">
-					<span class="input-group-btn">
-						<button type="button">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-						</button>
-					</span>
-				</form>
-				<%--<p class="help-block text-nowrap">
-					<a href="">连衣裙</a>
-					<a href="">裤</a>
-					<a href="">衬衫</a>
-					<a href="">T恤</a>
-					<a href="">女包</a>
-					<a href="">家居服</a>
-					<a href="">2017新款</a>
-				</p>--%>
-			</div>
-			<div class="cart-box">
-				<a href="udai_shopcart.html" class="cart-but">
-					<i class="iconfont icon-shopcart cr fz16"></i> 购物车 0 件
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- 内页导航栏 -->
-	<div class="top-nav bg3">
-		<div class="nav-box inner">
-			<div class="all-cat">
-				<div class="title"><i class="iconfont icon-menu"></i> 全部分类</div>
-			</div>
-			<ul class="nva-list">
-				<a href="index.html"><li>首页</li></a>
-				<a href="temp_article/udai_article10.html"><li>企业简介</li></a>
-				<a href="temp_article/udai_article5.html"><li>新手上路</li></a>
-				<a href="class_room.html"><li>U袋学堂</li></a>
-				<a href="enterprise_id.html"><li>企业账号</li></a>
-				<a href="udai_contract.html"><li>诚信合约</li></a>
-				<a href="item_remove.html"><li>实时下架</li></a>
-			</ul>
-		</div>
-	</div>
+    <%@include file="_nav.jsp"%>
 	<div class="content inner">
 		<section class="item-show__div item-show__head clearfix">
 			<div class="pull-left">
 				<ol class="breadcrumb">
 					<li><a href="${path}/index">首页</a></li>
-					<li><a href="item_sale_page.html">爆款推荐</a></li>
+					<li><a href="item_sale_page">爆款推荐</a></li>
 					<li class="active">${requestScope.product.NAME}</li>
 				</ol>
 				<div class="item-pic__box" id="magnifier">
@@ -118,7 +90,7 @@
 					</div>--%>
 					<div class="big-box"><img src="${path}/static/images/temp/S-001-1_b.jpg" alt="重回汉唐 旧忆 原创设计日常汉服女款绣花长褙子吊带改良宋裤春夏"></div>
 				</div>
-				<script src="js/jquery.magnifier.js"></script>
+				<script src="${path}/static/js/jquery.magnifier.js"></script>
 				<script>
 					$(function () {
 						$('#magnifier').magnifier();
@@ -132,7 +104,7 @@
 					<div class="item-price bgf5">
 						<div class="price-box clearfix">
 							<div class="price-panel pull-left">
-								售价：<span class="price"><fmt:formatNumber value="${requestScope.product.PRICE}" type="CURRENCY"></fmt:formatNumber> <s class="fz16 c9">￥24.00</s></span>
+								售价：<span id="cart-product-price" class="price"><fmt:formatNumber value="${requestScope.product.PRICE}" type="CURRENCY"></fmt:formatNumber> <%--<s class="fz16 c9">￥24.00</s>--%></span>
 							</div>
 							<div class="vip-price-panel pull-right">
 								会员等级价格 <i class="iconfont icon-down"></i>
@@ -178,28 +150,30 @@
 					</ul>
 					<div class="item-key">
 						<div class="item-sku">
-							<dl class="item-prop clearfix">
+							<dl id="cart-product-cololr" class="item-prop clearfix">
 								<dt class="item-metatit">颜色：</dt>
 								<dd>
 									<ul data-property="颜色" class="clearfix">
 										<c:forTokens items="${requestScope.product.COLOR}" delims="," var="color" varStatus="status">
 											<li>
-												<a <%--onclick="alert(${status.index})"--%> <c:if test="${status.index == 1}">class="on"</c:if> href="javascript:;" role="button" data-value="${color}" aria-disabled="true">
-													<span>${color}</span>
-												</a>
+                                                <a onclick="$(this).parent().parent().find('a').removeClass(); $(this).addClass('on')/*; console.log($(this).attr('data-value'))*/" href="javascript:; " role="button" data-value="${color}" aria-disabled="true">
+                                                    <span>${color}</span>
+                                                </a>
 											</li>
 										</c:forTokens>
 									</ul>
 								</dd>
 							</dl>
-							<dl class="item-prop clearfix">
+							<dl id="cart-product-size" class="item-prop clearfix">
 								<dt class="item-metatit">尺码：</dt>
 								<dd>
 									<ul data-property="尺码" class="clearfix">
 										<c:forTokens items="${requestScope.product.PRODUCT_SIZE}" delims="," var="size" varStatus="status">
-											<li><a href="javascript:;" role="button" data-value="S" aria-disabled="true">
-												<span>${size}</span>
-											</a></li>
+											<li>
+                                                <a onclick="$(this).parent().parent().find('a').removeClass(); $(this).addClass('on')" href="javascript:;" role="button" data-value="${size}" aria-disabled="true">
+												    <span>${size}</span>
+											    </a>
+                                            </li>
 										</c:forTokens>
 									</ul>
 								</dd>
@@ -209,17 +183,17 @@
 							<div class="item-metatit">数量：</div>
 							<div class="amount-box">
 								<div class="amount-widget">
-									<input class="amount-input" value="1" maxlength="8" title="请输入购买量" type="text">
+									<input id="cart-product-amount" class="amount-input" value="1" maxlength="8" title="请输入购买量" type="text">
 									<div class="amount-btn">
 										<a class="amount-but add"></a>
 										<a class="amount-but sub"></a>
 									</div>
 								</div>
-								<div class="item-stock"><span style="margin-left: 10px;">库存 <b id="Stock">1000</b> 件</span></div>
+								<div class="item-stock"><span style="margin-left: 10px;">库存 <b id="Stock">${requestScope.product.STOCK}</b> 件</span></div>
 								<script>
 									$(function () {
 										$('.amount-input').onlyReg({reg: /[^0-9]/g});
-										var stock = parseInt($('#Stock').html());
+										var stock = parseInt($('#Stock')());
 										$('.amount-widget').on('click','.amount-but',function() {
 											var num = parseInt($('.amount-input').val());
 											if (!num) num = 0;
@@ -249,7 +223,7 @@
 						</div>
 						<div class="item-action clearfix bgf5">
 							<a href="javascript:;" rel="nofollow" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。" role="button" class="item-action__buy">立即购买</a>
-							<a href="javascript:;" rel="nofollow" data-addfastbuy="true" role="button" class="item-action__basket">
+							<a id="btn-add" href="javascript:;" rel="nofollow" data-addfastbuy="true" role="button" class="item-action__basket">
 								<i class="iconfont icon-shopcart"></i> 加入购物车
 							</a>
 						</div>
@@ -765,7 +739,7 @@
 									</div>
 								</div>
 							</div>
-							<script src="js/jquery.zoom.js"></script>
+							<script src="${path}/static/js/jquery.zoom.js"></script>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="service" aria-labelledby="service-tab">
@@ -999,19 +973,19 @@
 	<div class="right-nav">
 		<ul class="r-with-gotop">
 			<li class="r-toolbar-item">
-				<a href="udai_welcome.html" class="r-item-hd">
+				<a href="udai_welcome" class="r-item-hd">
 					<i class="iconfont icon-user" data-badge="0"></i>
 					<div class="r-tip__box"><span class="r-tip-text">用户中心</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_shopcart.html" class="r-item-hd">
+				<a href="udai_shopcart" class="r-item-hd">
 					<i class="iconfont icon-cart"></i>
 					<div class="r-tip__box"><span class="r-tip-text">购物车</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_collection.html" class="r-item-hd">
+				<a href="udai_collection" class="r-item-hd">
 					<i class="iconfont icon-aixin"></i>
 					<div class="r-tip__box"><span class="r-tip-text">我的收藏</span></div>
 				</a>
@@ -1023,7 +997,7 @@
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="issues.html" class="r-item-hd">
+				<a href="issues" class="r-item-hd">
 					<i class="iconfont icon-liuyan"></i>
 					<div class="r-tip__box"><span class="r-tip-text">留言反馈</span></div>
 				</a>
@@ -1058,32 +1032,32 @@
 		<div class="footer-links inner">
 			<dl>
 				<dt>U袋网</dt>
-				<a href="temp_article/udai_article10.html"><dd>企业简介</dd></a>
-				<a href="temp_article/udai_article11.html"><dd>加入U袋</dd></a>
-				<a href="temp_article/udai_article12.html"><dd>隐私说明</dd></a>
+				<a href="temp_article/udai_article10"><dd>企业简介</dd></a>
+				<a href="temp_article/udai_article11"><dd>加入U袋</dd></a>
+				<a href="temp_article/udai_article12"><dd>隐私说明</dd></a>
 			</dl>
 			<dl>
 				<dt>服务中心</dt>
-				<a href="temp_article/udai_article1.html"><dd>售后服务</dd></a>
-				<a href="temp_article/udai_article2.html"><dd>配送服务</dd></a>
-				<a href="temp_article/udai_article3.html"><dd>用户协议</dd></a>
-				<a href="temp_article/udai_article4.html"><dd>常见问题</dd></a>
+				<a href="temp_article/udai_article1"><dd>售后服务</dd></a>
+				<a href="temp_article/udai_article2"><dd>配送服务</dd></a>
+				<a href="temp_article/udai_article3"><dd>用户协议</dd></a>
+				<a href="temp_article/udai_article4"><dd>常见问题</dd></a>
 			</dl>
 			<dl>
 				<dt>新手上路</dt>
-				<a href="temp_article/udai_article5.html"><dd>如何成为代理商</dd></a>
-				<a href="temp_article/udai_article6.html"><dd>代销商上架教程</dd></a>
-				<a href="temp_article/udai_article7.html"><dd>分销商常见问题</dd></a>
-				<a href="temp_article/udai_article8.html"><dd>付款账户</dd></a>
+				<a href="temp_article/udai_article5"><dd>如何成为代理商</dd></a>
+				<a href="temp_article/udai_article6"><dd>代销商上架教程</dd></a>
+				<a href="temp_article/udai_article7"><dd>分销商常见问题</dd></a>
+				<a href="temp_article/udai_article8"><dd>付款账户</dd></a>
 			</dl>
 		</div>
 		<div class="copy-box clearfix">
 			<ul class="copy-links">
-				<a href="agent_level.html"><li>网店代销</li></a>
-				<a href="class_room.html"><li>U袋学堂</li></a>
-				<a href="udai_about.html"><li>联系我们</li></a>
-				<a href="temp_article/udai_article10.html"><li>企业简介</li></a>
-				<a href="temp_article/udai_article5.html"><li>新手上路</li></a>
+				<a href="agent_level"><li>网店代销</li></a>
+				<a href="class_room"><li>U袋学堂</li></a>
+				<a href="udai_about"><li>联系我们</li></a>
+				<a href="temp_article/udai_article10"><li>企业简介</li></a>
+				<a href="temp_article/udai_article5"><li>新手上路</li></a>
 			</ul>
 			<!-- 版权 -->
 			<p class="copyright">

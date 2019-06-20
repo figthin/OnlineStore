@@ -68,8 +68,8 @@
     <schema id="21" parent="1" name="YXK">
       <ObjectId>52</ObjectId>
       <CreatedTimestamp>2019-06-06.22:51:42</CreatedTimestamp>
-      <ModifiedTimestamp>2019-06-17.23:40:36</ModifiedTimestamp>
-      <IntrospectionTimestamp>2019-06-17.23:40:36</IntrospectionTimestamp>
+      <ModifiedTimestamp>2019-06-18.23:59:25</ModifiedTimestamp>
+      <IntrospectionTimestamp>2019-06-18.23:59:27</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -27974,7 +27974,7 @@
     <table id="4009" parent="21" name="CART">
       <ObjectId>21534</ObjectId>
       <CreatedTimestamp>2019-06-07.21:13:42</CreatedTimestamp>
-      <ModifiedTimestamp>2019-06-17.23:40:36</ModifiedTimestamp>
+      <ModifiedTimestamp>2019-06-18.23:59:25</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="4010" parent="21" name="CLASS1">
@@ -28108,11 +28108,7 @@
       <Position>6</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
     </column>
-    <column id="4035" parent="4009" name="PRICE">
-      <Position>7</Position>
-      <DataType>NUMBER(9,2 digit)|0s</DataType>
-    </column>
-    <index id="4036" parent="4009" name="SYS_C007153">
+    <index id="4035" parent="4009" name="SYS_C007153">
       <ObjectId>21535</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.21:13:42</CreatedTimestamp>
@@ -28121,7 +28117,7 @@
       <ColNames>CART_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4037" parent="4009" name="SYS_C007153">
+    <key id="4036" parent="4009" name="SYS_C007153">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.21:13:42</ModifiedTimestamp>
       <ColNames>CART_ID</ColNames>
@@ -28129,7 +28125,7 @@
       <UnderlyingIndexName>SYS_C007153</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4038" parent="4009" name="FK_CART_USER_ID">
+    <foreign-key id="4037" parent="4009" name="FK_CART_USER_ID">
       <ModifiedTimestamp>2019-06-07.21:13:42</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28137,7 +28133,7 @@
       <RefKeyName>SYS_C007147</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="4039" parent="4009" name="FK_CART_PRODUCT_ID">
+    <foreign-key id="4038" parent="4009" name="FK_CART_PRODUCT_ID">
       <ModifiedTimestamp>2019-06-07.21:13:42</ModifiedTimestamp>
       <ColNames>PRODUCT_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28145,24 +28141,24 @@
       <RefKeyName>SYS_C007148</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4040" parent="4010" name="CLASS1_ID">
+    <column id="4039" parent="4010" name="CLASS1_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4041" parent="4010" name="CLASS1_NAME">
+    <column id="4040" parent="4010" name="CLASS1_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4042" parent="4010" name="IS_DELETE">
+    <column id="4041" parent="4010" name="IS_DELETE">
       <Position>3</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4043" parent="4010" name="ADD_TIME">
+    <column id="4042" parent="4010" name="ADD_TIME">
       <Position>4</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <index id="4044" parent="4010" name="SYS_C007142">
+    <index id="4043" parent="4010" name="SYS_C007142">
       <ObjectId>21519</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-06.23:33:05</CreatedTimestamp>
@@ -28171,7 +28167,7 @@
       <ColNames>CLASS1_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4045" parent="4010" name="SYS_C007142">
+    <key id="4044" parent="4010" name="SYS_C007142">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-06.23:33:05</ModifiedTimestamp>
       <ColNames>CLASS1_ID</ColNames>
@@ -28179,28 +28175,28 @@
       <UnderlyingIndexName>SYS_C007142</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="4046" parent="4011" name="CLASS2_ID">
+    <column id="4045" parent="4011" name="CLASS2_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4047" parent="4011" name="CLASS2_NAME">
+    <column id="4046" parent="4011" name="CLASS2_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4048" parent="4011" name="CLASS1_ID">
+    <column id="4047" parent="4011" name="CLASS1_ID">
       <Position>3</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4049" parent="4011" name="IS_DELETE">
+    <column id="4048" parent="4011" name="IS_DELETE">
       <Position>4</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4050" parent="4011" name="ADD_TIME">
+    <column id="4049" parent="4011" name="ADD_TIME">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <index id="4051" parent="4011" name="SYS_C007143">
+    <index id="4050" parent="4011" name="SYS_C007143">
       <ObjectId>21521</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-06.23:34:10</CreatedTimestamp>
@@ -28209,7 +28205,7 @@
       <ColNames>CLASS2_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4052" parent="4011" name="SYS_C007143">
+    <key id="4051" parent="4011" name="SYS_C007143">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-06.23:34:10</ModifiedTimestamp>
       <ColNames>CLASS2_ID</ColNames>
@@ -28217,7 +28213,7 @@
       <UnderlyingIndexName>SYS_C007143</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4053" parent="4011" name="FK_CLASS2_CLASS1_ID">
+    <foreign-key id="4052" parent="4011" name="FK_CLASS2_CLASS1_ID">
       <ModifiedTimestamp>2019-06-06.23:34:10</ModifiedTimestamp>
       <ColNames>CLASS1_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28225,28 +28221,28 @@
       <RefKeyName>SYS_C007142</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4054" parent="4012" name="CLASS3_ID">
+    <column id="4053" parent="4012" name="CLASS3_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4055" parent="4012" name="CLASS3_NAME">
+    <column id="4054" parent="4012" name="CLASS3_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4056" parent="4012" name="CLASS2_ID">
+    <column id="4055" parent="4012" name="CLASS2_ID">
       <Position>3</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4057" parent="4012" name="IS_DELETE">
+    <column id="4056" parent="4012" name="IS_DELETE">
       <Position>4</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4058" parent="4012" name="ADD_TIME">
+    <column id="4057" parent="4012" name="ADD_TIME">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <index id="4059" parent="4012" name="SYS_C007145">
+    <index id="4058" parent="4012" name="SYS_C007145">
       <ObjectId>21524</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-06.23:35:51</CreatedTimestamp>
@@ -28255,7 +28251,7 @@
       <ColNames>CLASS3_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4060" parent="4012" name="SYS_C007145">
+    <key id="4059" parent="4012" name="SYS_C007145">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-06.23:35:51</ModifiedTimestamp>
       <ColNames>CLASS3_ID</ColNames>
@@ -28263,7 +28259,7 @@
       <UnderlyingIndexName>SYS_C007145</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4061" parent="4012" name="FK_CLASS3_CLASS2_ID">
+    <foreign-key id="4060" parent="4012" name="FK_CLASS3_CLASS2_ID">
       <ModifiedTimestamp>2019-06-06.23:35:51</ModifiedTimestamp>
       <ColNames>CLASS2_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28271,32 +28267,32 @@
       <RefKeyName>SYS_C007143</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4062" parent="4013" name="EVALUATION_ID">
+    <column id="4061" parent="4013" name="EVALUATION_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4063" parent="4013" name="GRADE">
+    <column id="4062" parent="4013" name="GRADE">
       <Position>2</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
     </column>
-    <column id="4064" parent="4013" name="CONTENT">
+    <column id="4063" parent="4013" name="CONTENT">
       <Position>3</Position>
       <DataType>VARCHAR2(200 byte)|0s</DataType>
     </column>
-    <column id="4065" parent="4013" name="USER_ID">
+    <column id="4064" parent="4013" name="USER_ID">
       <Position>4</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4066" parent="4013" name="TIME">
+    <column id="4065" parent="4013" name="TIME">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4067" parent="4013" name="PRODUCT_ID">
+    <column id="4066" parent="4013" name="PRODUCT_ID">
       <Position>6</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <index id="4068" parent="4013" name="SYS_C007150">
+    <index id="4067" parent="4013" name="SYS_C007150">
       <ObjectId>21532</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.21:07:42</CreatedTimestamp>
@@ -28305,7 +28301,7 @@
       <ColNames>EVALUATION_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4069" parent="4013" name="SYS_C007150">
+    <key id="4068" parent="4013" name="SYS_C007150">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.21:07:42</ModifiedTimestamp>
       <ColNames>EVALUATION_ID</ColNames>
@@ -28313,7 +28309,7 @@
       <UnderlyingIndexName>SYS_C007150</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4070" parent="4013" name="FK_EVALUATION_USER_ID">
+    <foreign-key id="4069" parent="4013" name="FK_EVALUATION_USER_ID">
       <ModifiedTimestamp>2019-06-07.21:07:42</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28321,7 +28317,7 @@
       <RefKeyName>SYS_C007147</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="4071" parent="4013" name="FK_EVALUATION_PRODUCT_ID">
+    <foreign-key id="4070" parent="4013" name="FK_EVALUATION_PRODUCT_ID">
       <ModifiedTimestamp>2019-06-07.21:07:42</ModifiedTimestamp>
       <ColNames>PRODUCT_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28329,44 +28325,44 @@
       <RefKeyName>SYS_C007148</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4072" parent="4014" name="ORDERS_ID">
+    <column id="4071" parent="4014" name="ORDERS_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4073" parent="4014" name="USER_ID">
+    <column id="4072" parent="4014" name="USER_ID">
       <Position>2</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4074" parent="4014" name="ADDRESS">
+    <column id="4073" parent="4014" name="ADDRESS">
       <Position>3</Position>
       <DataType>VARCHAR2(100 byte)|0s</DataType>
     </column>
-    <column id="4075" parent="4014" name="TIME_CREATE">
+    <column id="4074" parent="4014" name="TIME_CREATE">
       <Position>4</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4076" parent="4014" name="TIME_PAY">
+    <column id="4075" parent="4014" name="TIME_PAY">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4077" parent="4014" name="TIME_FINISH">
+    <column id="4076" parent="4014" name="TIME_FINISH">
       <Position>6</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4078" parent="4014" name="TRADING_STATUS">
+    <column id="4077" parent="4014" name="TRADING_STATUS">
       <Position>7</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4079" parent="4014" name="OPERATE">
+    <column id="4078" parent="4014" name="OPERATE">
       <Position>8</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4080" parent="4014" name="ORDER_STATUS">
+    <column id="4079" parent="4014" name="ORDER_STATUS">
       <Position>9</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <index id="4081" parent="4014" name="SYS_C007160">
+    <index id="4080" parent="4014" name="SYS_C007160">
       <ObjectId>21547</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.22:35:43</CreatedTimestamp>
@@ -28375,7 +28371,7 @@
       <ColNames>ORDERS_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4082" parent="4014" name="SYS_C007160">
+    <key id="4081" parent="4014" name="SYS_C007160">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.22:35:43</ModifiedTimestamp>
       <ColNames>ORDERS_ID</ColNames>
@@ -28383,7 +28379,7 @@
       <UnderlyingIndexName>SYS_C007160</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4083" parent="4014" name="FK_ORDERS_USER_ID">
+    <foreign-key id="4082" parent="4014" name="FK_ORDERS_USER_ID">
       <ModifiedTimestamp>2019-06-07.22:35:43</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28391,44 +28387,44 @@
       <RefKeyName>SYS_C007147</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4084" parent="4015" name="ORDERS_DETAIL_ID">
+    <column id="4083" parent="4015" name="ORDERS_DETAIL_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4085" parent="4015" name="ORDERS_ID">
+    <column id="4084" parent="4015" name="ORDERS_ID">
       <Position>2</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4086" parent="4015" name="PRODUCT_ID">
+    <column id="4085" parent="4015" name="PRODUCT_ID">
       <Position>3</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4087" parent="4015" name="NAME">
+    <column id="4086" parent="4015" name="NAME">
       <Position>4</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4088" parent="4015" name="PRICE">
+    <column id="4087" parent="4015" name="PRICE">
       <Position>5</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4089" parent="4015" name="URL">
+    <column id="4088" parent="4015" name="URL">
       <Position>6</Position>
       <DataType>VARCHAR2(100 byte)|0s</DataType>
     </column>
-    <column id="4090" parent="4015" name="AMOUNT">
+    <column id="4089" parent="4015" name="AMOUNT">
       <Position>7</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4091" parent="4015" name="DISCOUNT">
+    <column id="4090" parent="4015" name="DISCOUNT">
       <Position>8</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4092" parent="4015" name="FREIGHT">
+    <column id="4091" parent="4015" name="FREIGHT">
       <Position>9</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <index id="4093" parent="4015" name="SYS_C007162">
+    <index id="4092" parent="4015" name="SYS_C007162">
       <ObjectId>21549</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.22:38:19</CreatedTimestamp>
@@ -28437,7 +28433,7 @@
       <ColNames>ORDERS_DETAIL_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4094" parent="4015" name="SYS_C007162">
+    <key id="4093" parent="4015" name="SYS_C007162">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.22:38:19</ModifiedTimestamp>
       <ColNames>ORDERS_DETAIL_ID</ColNames>
@@ -28445,7 +28441,7 @@
       <UnderlyingIndexName>SYS_C007162</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4095" parent="4015" name="FK_ORDERS_DETAIL_ORDERS_ID">
+    <foreign-key id="4094" parent="4015" name="FK_ORDERS_DETAIL_ORDERS_ID">
       <ModifiedTimestamp>2019-06-07.22:38:19</ModifiedTimestamp>
       <ColNames>ORDERS_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28453,7 +28449,7 @@
       <RefKeyName>SYS_C007160</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="4096" parent="4015" name="FK_ORDERS_DETAIL_PRODUCT_ID">
+    <foreign-key id="4095" parent="4015" name="FK_ORDERS_DETAIL_PRODUCT_ID">
       <ModifiedTimestamp>2019-06-07.22:38:19</ModifiedTimestamp>
       <ColNames>PRODUCT_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28461,64 +28457,64 @@
       <RefKeyName>SYS_C007148</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4097" parent="4016" name="PRODUCT_ID">
+    <column id="4096" parent="4016" name="PRODUCT_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4098" parent="4016" name="STOCK">
+    <column id="4097" parent="4016" name="STOCK">
       <Position>2</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4099" parent="4016" name="SALE">
+    <column id="4098" parent="4016" name="SALE">
       <Position>3</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4100" parent="4016" name="CLASS_ID">
+    <column id="4099" parent="4016" name="CLASS_ID">
       <Position>4</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4101" parent="4016" name="URL">
+    <column id="4100" parent="4016" name="URL">
       <Position>5</Position>
       <DataType>VARCHAR2(100 byte)|0s</DataType>
     </column>
-    <column id="4102" parent="4016" name="IS_DELETE">
+    <column id="4101" parent="4016" name="IS_DELETE">
       <Position>6</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4103" parent="4016" name="ADD_TIME">
+    <column id="4102" parent="4016" name="ADD_TIME">
       <Position>7</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4104" parent="4016" name="POINTS">
+    <column id="4103" parent="4016" name="POINTS">
       <Position>8</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4105" parent="4016" name="WEIGHT">
+    <column id="4104" parent="4016" name="WEIGHT">
       <Position>9</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4106" parent="4016" name="FREIGHT">
+    <column id="4105" parent="4016" name="FREIGHT">
       <Position>10</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4107" parent="4016" name="NAME">
+    <column id="4106" parent="4016" name="NAME">
       <Position>11</Position>
       <DataType>VARCHAR2(200 byte)|0s</DataType>
     </column>
-    <column id="4108" parent="4016" name="COLOR">
+    <column id="4107" parent="4016" name="COLOR">
       <Position>12</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4109" parent="4016" name="PRODUCT_SIZE">
+    <column id="4108" parent="4016" name="PRODUCT_SIZE">
       <Position>13</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4110" parent="4016" name="PRICE">
+    <column id="4109" parent="4016" name="PRICE">
       <Position>14</Position>
       <DataType>NUMBER(9,2 digit)|0s</DataType>
     </column>
-    <index id="4111" parent="4016" name="SYS_C007148">
+    <index id="4110" parent="4016" name="SYS_C007148">
       <ObjectId>21529</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.21:01:23</CreatedTimestamp>
@@ -28527,7 +28523,7 @@
       <ColNames>PRODUCT_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4112" parent="4016" name="SYS_C007148">
+    <key id="4111" parent="4016" name="SYS_C007148">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.21:01:23</ModifiedTimestamp>
       <ColNames>PRODUCT_ID</ColNames>
@@ -28535,7 +28531,7 @@
       <UnderlyingIndexName>SYS_C007148</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4113" parent="4016" name="FK_PRODUCT_CLASS_ID">
+    <foreign-key id="4112" parent="4016" name="FK_PRODUCT_CLASS_ID">
       <ModifiedTimestamp>2019-06-07.21:01:23</ModifiedTimestamp>
       <ColNames>CLASS_ID</ColNames>
       <RefSchemaName>YXK</RefSchemaName>
@@ -28543,60 +28539,60 @@
       <RefKeyName>SYS_C007145</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4114" parent="4017" name="USER_ID">
+    <column id="4113" parent="4017" name="USER_ID">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4115" parent="4017" name="USER_NAME">
+    <column id="4114" parent="4017" name="USER_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4116" parent="4017" name="PASSWORD">
+    <column id="4115" parent="4017" name="PASSWORD">
       <Position>3</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
     </column>
-    <column id="4117" parent="4017" name="IS_DELETE">
+    <column id="4116" parent="4017" name="IS_DELETE">
       <Position>4</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4118" parent="4017" name="INTEGRAL">
+    <column id="4117" parent="4017" name="INTEGRAL">
       <Position>5</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4119" parent="4017" name="IS_MEMBER">
+    <column id="4118" parent="4017" name="IS_MEMBER">
       <Position>6</Position>
       <DataType>NUMBER(1 digit)|0s</DataType>
     </column>
-    <column id="4120" parent="4017" name="BALANCE">
+    <column id="4119" parent="4017" name="BALANCE">
       <Position>7</Position>
       <DataType>NUMBER(9 digit)|0s</DataType>
     </column>
-    <column id="4121" parent="4017" name="BIRTH">
+    <column id="4120" parent="4017" name="BIRTH">
       <Position>8</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4122" parent="4017" name="REGISTER_TIME">
+    <column id="4121" parent="4017" name="REGISTER_TIME">
       <Position>9</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4123" parent="4017" name="PAY_PASSWORD">
+    <column id="4122" parent="4017" name="PAY_PASSWORD">
       <Position>10</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4124" parent="4017" name="TEL">
+    <column id="4123" parent="4017" name="TEL">
       <Position>11</Position>
       <DataType>VARCHAR2(11 byte)|0s</DataType>
     </column>
-    <column id="4125" parent="4017" name="CHECK_IN">
+    <column id="4124" parent="4017" name="CHECK_IN">
       <Position>12</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
     </column>
-    <column id="4126" parent="4017" name="GENDER">
+    <column id="4125" parent="4017" name="GENDER">
       <Position>13</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
     </column>
-    <index id="4127" parent="4017" name="SYS_C007147">
+    <index id="4126" parent="4017" name="SYS_C007147">
       <ObjectId>21527</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2019-06-07.00:26:00</CreatedTimestamp>
@@ -28605,7 +28601,7 @@
       <ColNames>USER_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="4128" parent="4017" name="user_name">
+    <index id="4127" parent="4017" name="user_name">
       <ObjectId>21729</ObjectId>
       <CreatedTimestamp>2019-06-14.03:02:28</CreatedTimestamp>
       <ModifiedTimestamp>2019-06-14.03:02:28</ModifiedTimestamp>
@@ -28613,7 +28609,7 @@
       <ColNames>USER_NAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="4129" parent="4017" name="tel">
+    <index id="4128" parent="4017" name="tel">
       <ObjectId>21730</ObjectId>
       <CreatedTimestamp>2019-06-14.03:02:28</CreatedTimestamp>
       <ModifiedTimestamp>2019-06-14.03:02:28</ModifiedTimestamp>
@@ -28621,7 +28617,7 @@
       <ColNames>TEL</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4130" parent="4017" name="SYS_C007147">
+    <key id="4129" parent="4017" name="SYS_C007147">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2019-06-07.00:26:00</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
@@ -28629,13 +28625,13 @@
       <UnderlyingIndexName>SYS_C007147</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="4131" parent="4017" name="user_name">
+    <key id="4130" parent="4017" name="user_name">
       <ModifiedTimestamp>2019-06-14.03:02:28</ModifiedTimestamp>
       <ColNames>USER_NAME</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>user_name</UnderlyingIndexName>
     </key>
-    <key id="4132" parent="4017" name="tel">
+    <key id="4131" parent="4017" name="tel">
       <ModifiedTimestamp>2019-06-14.03:02:28</ModifiedTimestamp>
       <ColNames>TEL</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>

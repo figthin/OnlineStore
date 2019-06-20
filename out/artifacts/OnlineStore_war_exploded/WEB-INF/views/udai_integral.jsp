@@ -3,37 +3,27 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-<head>
-	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="css/iconfont.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="js/swiper.min.js" charset="UTF-8"></script>
-	<script src="js/global.js" charset="UTF-8"></script>
-	<script src="js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
-	<title>U袋网</title>
-</head>
+<%@include file="_head.jsp"%>
 <body>
 	<!-- 顶部tab -->
 	<div class="tab-header">
 		<div class="inner">
 			<div class="pull-left">
 				<div class="pull-left">嗨，欢迎来到<span class="cr">U袋网</span></div>
-				<a href="agent_level.html">网店代销</a>
-				<a href="temp_article/udai_article4.html">帮助中心</a>
+				<a href="agent_level">网店代销</a>
+				<a href="temp_article/udai_article4">帮助中心</a>
 			</div>
 			<div class="pull-right">
-				<a href="login.html"><span class="cr">登录</span></a>
-				<a href="login.html?p=register">注册</a>
-				<a href="udai_welcome.html">我的U袋</a>
-				<a href="udai_order.html">我的订单</a>
-				<a href="udai_integral.html">积分平台</a>
+				<c:if test="${sessionScope.user != null}">
+					<a href="${path}/logout"><span class="cr">退出登录</span></a>
+				</c:if>
+				<c:if test="${sessionScope.user == null}">
+					<a href="${path}/login"><span class="cr">登录</span></a>
+					<a href="${path}/register">注册</a>
+				</c:if>
+				<a href="welcome">我的U袋</a>
+				<a href="order">我的订单</a>
+				<a href="integral">积分平台</a>
 			</div>
 		</div>
 	</div>
@@ -41,7 +31,7 @@
 	<div class="bgf5 clearfix">
 		<div class="top-user">
 			<div class="inner">
-				<a class="logo" href="index.html"><img src="images/icons/logo.jpg" alt="U袋网" class="cover"></a>
+				<a class="logo" href="index"><img src="${path}/static/images/icons/logo.jpg" alt="U袋网" class="cover"></a>
 				<div class="title">个人中心</div>
 			</div>
 		</div>
@@ -49,44 +39,44 @@
 	<div class="content clearfix bgf5">
 		<section class="user-center inner clearfix">
 			<div class="pull-left bgf">
-				<a href="udai_welcome.html" class="title">U袋欢迎页</a>
+				<a href="udai_welcome" class="title">U袋欢迎页</a>
 				<dl class="user-center__nav">
 					<dt>帐户信息</dt>
-					<a href="udai_setting.html"><dd>个人资料</dd></a>
-					<a href="udai_treasurer.html"><dd>资金管理</dd></a>
-					<a href="udai_integral.html"><dd class="active">积分平台</dd></a>
-					<a href="udai_address.html"><dd>收货地址</dd></a>
-					<a href="udai_coupon.html"><dd>我的优惠券</dd></a>
-					<a href="udai_paypwd_modify.html"><dd>修改支付密码</dd></a>
-					<a href="udai_pwd_modify.html"><dd>修改登录密码</dd></a>
+					<a href="udai_setting"><dd>个人资料</dd></a>
+					<a href="udai_treasurer"><dd>资金管理</dd></a>
+					<a href="udai_integral"><dd class="active">积分平台</dd></a>
+					<a href="udai_address"><dd>收货地址</dd></a>
+					<a href="udai_coupon"><dd>我的优惠券</dd></a>
+					<a href="udai_paypwd_modify"><dd>修改支付密码</dd></a>
+					<a href="udai_pwd_modify"><dd>修改登录密码</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>订单中心</dt>
-					<a href="udai_order.html"><dd>我的订单</dd></a>
-					<a href="udai_collection.html"><dd>我的收藏</dd></a>
-					<a href="udai_refund.html"><dd>退款/退货</dd></a>
+					<a href="udai_order"><dd>我的订单</dd></a>
+					<a href="udai_collection"><dd>我的收藏</dd></a>
+					<a href="udai_refund"><dd>退款/退货</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>服务中心</dt>
-					<a href="udai_mail_query.html"><dd>物流查询</dd></a>
+					<a href="udai_mail_query"><dd>物流查询</dd></a>
 					<a href=""><dd>数据自助下载</dd></a>
-					<a href="temp_article/udai_article1.html"><dd>售后服务</dd></a>
-					<a href="temp_article/udai_article2.html"><dd>配送服务</dd></a>
-					<a href="temp_article/udai_article3.html"><dd>用户协议</dd></a>
-					<a href="temp_article/udai_article4.html"><dd>常见问题</dd></a>
+					<a href="temp_article/udai_article1"><dd>售后服务</dd></a>
+					<a href="temp_article/udai_article2"><dd>配送服务</dd></a>
+					<a href="temp_article/udai_article3"><dd>用户协议</dd></a>
+					<a href="temp_article/udai_article4"><dd>常见问题</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>新手上路</dt>
-					<a href="temp_article/udai_article5.html"><dd>如何成为代理商</dd></a>
-					<a href="temp_article/udai_article6.html"><dd>代销商上架教程</dd></a>
-					<a href="temp_article/udai_article7.html"><dd>分销商常见问题</dd></a>
-					<a href="temp_article/udai_article8.html"><dd>付款账户</dd></a>
+					<a href="temp_article/udai_article5"><dd>如何成为代理商</dd></a>
+					<a href="temp_article/udai_article6"><dd>代销商上架教程</dd></a>
+					<a href="temp_article/udai_article7"><dd>分销商常见问题</dd></a>
+					<a href="temp_article/udai_article8"><dd>付款账户</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>U袋网</dt>
-					<a href="temp_article/udai_article10.html"><dd>企业简介</dd></a>
-					<a href="temp_article/udai_article11.html"><dd>加入U袋</dd></a>
-					<a href="temp_article/udai_article12.html"><dd>隐私说明</dd></a>
+					<a href="temp_article/udai_article10"><dd>企业简介</dd></a>
+					<a href="temp_article/udai_article11"><dd>加入U袋</dd></a>
+					<a href="temp_article/udai_article12"><dd>隐私说明</dd></a>
 				</dl>
 			</div>
 			<div class="pull-right">
@@ -131,7 +121,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-001.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-001.jpg" alt="" class="cover"></div>
 													<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -145,7 +135,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-002.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-002.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -159,7 +149,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-003.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-003.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -173,7 +163,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-004.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-004.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -187,7 +177,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-005.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-005.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -201,7 +191,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-006.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-006.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -215,7 +205,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/M-007.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/M-007.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -240,7 +230,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-001.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-001.jpg" alt="" class="cover"></div>
 													<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -254,7 +244,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-002.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-002.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -268,7 +258,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-003.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-003.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -282,7 +272,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-004.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-004.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -296,7 +286,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-005.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-005.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -310,7 +300,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-006.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-006.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -324,7 +314,7 @@
 										<div class="integral-item">
 											<div class="tdf3">
 												<a class="integral-item__info" href="">
-													<div class="img"><img src="images/temp/S-007.jpg" alt="" class="cover"></div>
+													<div class="img"><img src="${path}/static/images/temp/S-007.jpg" alt="" class="cover"></div>
 													<div class="name ep2">霜天月明 原创日常汉服男云纹绣花单大氅传统礼服外套</div>
 													<div class="type">颜色分类：深棕色 尺码：均码</div>
 												</a>
@@ -357,7 +347,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-001.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-001.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -373,7 +363,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-002.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-002.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -389,7 +379,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-003.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-003.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -405,7 +395,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-004.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-004.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -421,7 +411,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-005.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-005.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -437,7 +427,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-006.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-006.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -453,7 +443,7 @@
 								<div class="integral-item">
 									<div class="tdf3">
 										<a class="integral-item__info" href="">
-											<div class="img"><img src="images/temp/M-007.jpg" alt="" class="cover"></div>
+											<div class="img"><img src="${path}/static/images/temp/M-007.jpg" alt="" class="cover"></div>
 											<div class="name ep2">锦瑟 原创传统日常汉服男绣花交领衣裳cp情侣装春夏款</div>
 											<div class="type">颜色分类：深棕色 尺码：均码</div>
 										</a>
@@ -484,19 +474,19 @@
 	<div class="right-nav">
 		<ul class="r-with-gotop">
 			<li class="r-toolbar-item">
-				<a href="udai_welcome.html" class="r-item-hd">
+				<a href="udai_welcome" class="r-item-hd">
 					<i class="iconfont icon-user" data-badge="0"></i>
 					<div class="r-tip__box"><span class="r-tip-text">用户中心</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_shopcart.html" class="r-item-hd">
+				<a href="udai_shopcart" class="r-item-hd">
 					<i class="iconfont icon-cart"></i>
 					<div class="r-tip__box"><span class="r-tip-text">购物车</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_collection.html" class="r-item-hd">
+				<a href="udai_collection" class="r-item-hd">
 					<i class="iconfont icon-aixin"></i>
 					<div class="r-tip__box"><span class="r-tip-text">我的收藏</span></div>
 				</a>
@@ -508,7 +498,7 @@
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="issues.html" class="r-item-hd">
+				<a href="issues" class="r-item-hd">
 					<i class="iconfont icon-liuyan"></i>
 					<div class="r-tip__box"><span class="r-tip-text">留言反馈</span></div>
 				</a>
@@ -527,48 +517,48 @@
 		<div class="footer-tags">
 			<div class="tags-box inner">
 				<div class="tag-div">
-					<img src="images/icons/footer_1.gif" alt="厂家直供">
+					<img src="${path}/static/images/icons/footer_1.gif" alt="厂家直供">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_2.gif" alt="一件代发">
+					<img src="${path}/static/images/icons/footer_2.gif" alt="一件代发">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_3.gif" alt="美工活动支持">
+					<img src="${path}/static/images/icons/footer_3.gif" alt="美工活动支持">
 				</div>
 				<div class="tag-div">
-					<img src="images/icons/footer_4.gif" alt="信誉认证">
+					<img src="${path}/static/images/icons/footer_4.gif" alt="信誉认证">
 				</div>
 			</div>
 		</div>
 		<div class="footer-links inner">
 			<dl>
 				<dt>U袋网</dt>
-				<a href="temp_article/udai_article10.html"><dd>企业简介</dd></a>
-				<a href="temp_article/udai_article11.html"><dd>加入U袋</dd></a>
-				<a href="temp_article/udai_article12.html"><dd>隐私说明</dd></a>
+				<a href="temp_article/udai_article10"><dd>企业简介</dd></a>
+				<a href="temp_article/udai_article11"><dd>加入U袋</dd></a>
+				<a href="temp_article/udai_article12"><dd>隐私说明</dd></a>
 			</dl>
 			<dl>
 				<dt>服务中心</dt>
-				<a href="temp_article/udai_article1.html"><dd>售后服务</dd></a>
-				<a href="temp_article/udai_article2.html"><dd>配送服务</dd></a>
-				<a href="temp_article/udai_article3.html"><dd>用户协议</dd></a>
-				<a href="temp_article/udai_article4.html"><dd>常见问题</dd></a>
+				<a href="temp_article/udai_article1"><dd>售后服务</dd></a>
+				<a href="temp_article/udai_article2"><dd>配送服务</dd></a>
+				<a href="temp_article/udai_article3"><dd>用户协议</dd></a>
+				<a href="temp_article/udai_article4"><dd>常见问题</dd></a>
 			</dl>
 			<dl>
 				<dt>新手上路</dt>
-				<a href="temp_article/udai_article5.html"><dd>如何成为代理商</dd></a>
-				<a href="temp_article/udai_article6.html"><dd>代销商上架教程</dd></a>
-				<a href="temp_article/udai_article7.html"><dd>分销商常见问题</dd></a>
-				<a href="temp_article/udai_article8.html"><dd>付款账户</dd></a>
+				<a href="temp_article/udai_article5"><dd>如何成为代理商</dd></a>
+				<a href="temp_article/udai_article6"><dd>代销商上架教程</dd></a>
+				<a href="temp_article/udai_article7"><dd>分销商常见问题</dd></a>
+				<a href="temp_article/udai_article8"><dd>付款账户</dd></a>
 			</dl>
 		</div>
 		<div class="copy-box clearfix">
 			<ul class="copy-links">
-				<a href="agent_level.html"><li>网店代销</li></a>
-				<a href="class_room.html"><li>U袋学堂</li></a>
-				<a href="udai_about.html"><li>联系我们</li></a>
-				<a href="temp_article/udai_article10.html"><li>企业简介</li></a>
-				<a href="temp_article/udai_article5.html"><li>新手上路</li></a>
+				<a href="agent_level"><li>网店代销</li></a>
+				<a href="class_room"><li>U袋学堂</li></a>
+				<a href="udai_about"><li>联系我们</li></a>
+				<a href="temp_article/udai_article10"><li>企业简介</li></a>
+				<a href="temp_article/udai_article5"><li>新手上路</li></a>
 			</ul>
 			<!-- 版权 -->
 			<p class="copyright">
