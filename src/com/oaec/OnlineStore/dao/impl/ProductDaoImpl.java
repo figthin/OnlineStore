@@ -41,4 +41,23 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
         String sql = "SELECT * FROM product WHERE PRODUCT_ID = ? AND IS_DELETE = 0";
         return query4Map(sql,productId);
     }
+
+    @Override
+    public Integer updateSale(Integer productId, Integer num) {
+        String sql = "UPDATE PRODUCT SET SALE = SALE + ? WHERE PRODUCT_ID = ?";
+        return executeUpdate(sql,productId,num);
+    }
+
+    @Override
+    public Integer updateStock(Integer productId, Integer num) {
+        String sql = "UPDATE PRODUCT SET STOCK = STOCK - ? WHERE PRODUCT_ID = ?";
+        return executeUpdate(sql,productId,num);
+    }
+
+    @Override
+    public List<Map<String, Object>> queryBySaleDesc() {
+        String sql = "SELECT ROWNUM,temp.* FROM (SELECT * FROM product WHERE IS_DELETE = 0 ORDER BY SALE DESC) temp WHERE ROWNUM <= 6";
+        return query4MapList(sql);
+    }
+
 }

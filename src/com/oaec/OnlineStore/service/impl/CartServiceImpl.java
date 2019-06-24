@@ -74,4 +74,14 @@ public class CartServiceImpl implements CartService {
         return cartDao.queryTotalPrice(cartId,productId);
     }
 
+    @Override
+    public Map<String, Object> getByCartId(String cartId) {
+        return cartDao.queryByCartId(cartId);
+    }
+
+    @Override
+    public Boolean doDeleteByCartId(Integer cartId) {
+        return cartDao.doDeleteByCartId(cartId) == 1;
+    }
+
 }

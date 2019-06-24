@@ -30,4 +30,19 @@ public class ProductServiceImpl extends CommonDao implements ProductService {
     public Map<String,Object> queryById(String productId) {
         return productDao.queryByProductId(Integer.parseInt(productId));
     }
+
+    @Override
+    public Boolean addSale(Integer productId, Integer num) {
+        return productDao.updateSale(productId,num) == 1;
+    }
+
+    @Override
+    public Boolean subStock(Integer productId, Integer num) {
+        return productDao.updateStock(productId,num) == 1;
+    }
+
+    @Override
+    public List<Map<String, Object>> getHotProducts() {
+        return productDao.queryBySaleDesc();
+    }
 }

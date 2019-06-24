@@ -18,4 +18,8 @@ public interface CartService {
     Map<String,Object> getTotal(Integer userId, String[] cartIds);
 
     Map<String,Object> getTotalPrice(Integer cartId,Integer productId);
+
+    Map<String,Object> getByCartId(String cartId);
+
+    Boolean doDeleteByCartId(Integer cartId);
 }

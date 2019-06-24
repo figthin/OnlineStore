@@ -28,4 +28,5 @@ public interface UserDao {
 	void Charge(double money, int uid);
 
 	Double showBalance(int uid);*/
+	Map<String,Object> queryByUserId(Integer userId);
 }

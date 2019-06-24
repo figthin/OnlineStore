@@ -7,28 +7,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4f2ce2f-64af-4558-a756-c39af9222e5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/CartFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartTotal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/DeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAmountServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/_head.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/AddressDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/OrderDetailDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/AddressDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/OrderDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/OrderDetailDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/OrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/OrderDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddressServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartPayServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/HotProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAddressServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/_foot.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/009.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/010.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/011.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/012.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/images/temp/013.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f15b3e1-a59e-470c-9db1-19d0e27a72f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f15b3e1-a59e-470c-9db1-19d0e27a72f6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/storage_v2/_src_/schema/YXK.DFkBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/storage_v2/_src_/schema/YXK.DFkBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/CartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/CartDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/ProductDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/impl/CartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/impl/CartDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/filter/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/filter/LoginFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/impl/CartServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/IntegralServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/IntegralServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/ProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/WelcomeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/WelcomeServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/_form.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/CartSevlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/CartSevlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/IndexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/servlet/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/text/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/classes/com/oaec/OnlineStore/text/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/item_category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/item_category.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/item_show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/item_show.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/login.jsp" afterDir="false" />
@@ -36,27 +62,53 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_shopcart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/WEB-INF/views/udai_welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/item_sale_page.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50010001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50020001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50030001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50040001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50050001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50060001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50070001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50080001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50090001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50100001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50110001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50120001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/static/images/temp/50130001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/udai_address.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/udai_order_detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineStore_war_exploded/udai_shopcart_pay.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/CartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/CartDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/ProductDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/impl/CartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/impl/CartDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/filter/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/filter/LoginFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/impl/CartServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/IntegralServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/IntegralServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/ProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/WelcomeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/WelcomeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/CartSevlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/CartSevlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/IndexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/servlet/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/text/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineStore/com/oaec/OnlineStore/text/HelloWorld.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/CartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/CartDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CartDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/LoginFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartSevlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartSevlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IntegralServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IntegralServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/oaec/OnlineStore/text/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/oaec/OnlineStore/text/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/_form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/item_category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/item_category.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/item_show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/item_show.jsp" afterDir="false" />
@@ -65,6 +117,23 @@
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/udai_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/item_sale_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/item_sale_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50010001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50020001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50030001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50040001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50050001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50060001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50070001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50080001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50090001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50100001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50110001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50120001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/temp/50130001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/udai_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/udai_order_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_order_detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/udai_shopcart_pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart_pay.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,119 +181,44 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/CartServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="73" column="55" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#2198#2199#0" expanded="true" />
-                <element signature="e#2255#2256#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1650" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/CartService.java">
+        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartSevlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartTotal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="63" column="59" lean-forward="true" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+            <state relative-caret-position="516">
+              <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAmountServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddCartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="70" column="152" lean-forward="true" selection-start-line="70" selection-end-line="70" selection-end-column="152" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/CartDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CartDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="24" column="71" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -234,44 +228,44 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cart-product-price</find>
-      <find>cart-product-cololr</find>
-      <find>现价</find>
-      <find>uri</find>
-      <find>合计</find>
-      <find>删除</find>
-      <find>productMessage</find>
-      <find>购物车</find>
-      <find>deleteAll</find>
-      <find>productPrice</find>
-      <find>td</find>
-      <find>totalPrice</find>
-      <find>image</find>
-      <find>-</find>
-      <find>(&quot;value&quot;,&quot;10&quot;)</find>
-      <find>tab-header</find>
-      <find>logo</find>
-      <find>images</find>
-      <find>+</find>
-      <find>fz24</find>
-      <find>checkbox</find>
-      <find>alreadyCheckedProduct</find>
-      <find>$check_all</find>
-      <find>check-all</find>
-      <find>inputs</find>
-      <find>cartTotal</find>
-      <find>cart</find>
-      <find>updateAmount</find>
-      <find>console.log</find>
+      <find>hidden</find>
+      <find>cartId</find>
+      <find>form</find>
+      <find>check-individual</find>
+      <find>total</find>
       <find>productTotalPrice</find>
+      <find>收货</find>
+      <find>image</find>
+      <find>fz24</find>
+      <find>总价</find>
+      <find>getTotal</find>
+      <find>addr</find>
+      <find>addr-radio</find>
+      <find>ProductId</find>
+      <find>productId</find>
+      <find>确认订单</find>
+      <find>orderD</find>
+      <find>btn</find>
+      <find>queryTotalPriceByOrderId</find>
+      <find>合计</find>
+      <find>getOrders</find>
+      <find>orderId</find>
+      <find>addOrder</find>
+      <find>热卖专区</find>
+      <find>收货地址</find>
+      <find>type=&quot;button&quot;</find>
+      <find>logo</find>
+      <find>checkbox</find>
+      <find>button</find>
+      <find>保存</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -284,57 +278,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/static/js/login.js" />
-        <option value="$PROJECT_DIR$/web/udai_welcome.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/ProductDao.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/EvaluationDao.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/EvaluationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/EvaluationService.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/EvaluationDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LogoutServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/RegisterServlet.java" />
-        <option value="$PROJECT_DIR$/web/udai_shopcart.jsp" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/CartFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddCartServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/DeleteServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/topTab.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/_form.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAmountServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/_foot.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/item_category.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IntegralServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_integral.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/_head.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_order.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/item_show.jsp" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/LoginFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/cartTotal.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_integral.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddressServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_order.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_order_detail.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CreateOrderServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart_pay.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/OrderDetailDao.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/OrderDetailService.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/OrderDetailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/OrderDao.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartPayServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderDetailServlet.java" />
         <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/text/HelloWorld.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartTotal.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/console.sql" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/OrderDetailDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/OrderDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/CartDao.java" />
         <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CartDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/CartService.java" />
         <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartSevlet.java" />
-        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAmountServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/ProductDao.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IndexServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/ProductDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ListServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/HotProductServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/item_sale_page.jsp" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/AddressDao.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/AddressDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/LoginFilter.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/AddressService.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/AddressServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAddressServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/udai_address.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/console.sql" />
+        <option value="$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -368,8 +362,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -400,21 +392,6 @@
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
               <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,27 +406,18 @@
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="text" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlineStore" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlineStore" type="b2602c69:ProjectViewProjectNode" />
@@ -468,6 +436,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,7 +447,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/static/images/temp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -498,9 +468,9 @@
       <recent name="com.oaec.OnlineStore.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\untitled\OnlineStore\web\static\images\temp" />
       <recent name="D:\IDEAProjects\untitled\OnlineStore\web\WEB-INF\views" />
       <recent name="D:\IDEAProjects\untitled\OnlineStore\web\static\js" />
-      <recent name="D:\IDEAProjects\untitled\OnlineStore\web\static\images\temp" />
       <recent name="D:\IDEAProjects\untitled\OnlineStore\web" />
       <recent name="D:\IDEAProjects\untitled\OnlineStore\src\com\oaec\OnlineStore" />
     </key>
@@ -652,7 +622,14 @@
       <workItem from="1560865670328" duration="9288000" />
       <workItem from="1560905625997" duration="29902000" />
       <workItem from="1560951296931" duration="368000" />
-      <workItem from="1560992335004" duration="26907000" />
+      <workItem from="1560992335004" duration="27180000" />
+      <workItem from="1561078853116" duration="10083000" />
+      <workItem from="1561102605698" duration="3504000" />
+      <workItem from="1561123192292" duration="3680000" />
+      <workItem from="1561201569147" duration="2326000" />
+      <workItem from="1561271883521" duration="22487000" />
+      <workItem from="1561337881327" duration="22530000" />
+      <workItem from="1561364207004" duration="9906000" />
     </task>
     <task id="LOCAL-00001" summary="测试1">
       <created>1559785720467</created>
@@ -675,11 +652,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560774652216</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="测试4">
+      <created>1561042916819</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561042916819</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297829000" />
+    <option name="totallyTimeSpent" value="372618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -692,9 +676,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27987897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2934947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -704,7 +687,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.4918033" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.3852459" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -720,8 +703,8 @@
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.44918033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" weight="0.24130106" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.24962178" />
       <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -729,7 +712,7 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27987897" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2934947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -739,7 +722,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.4918033" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.3852459" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -752,11 +735,11 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3295082" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3295082" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.44918033" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="15" visible="true" weight="0.44918033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Database" order="1" weight="0.24130106" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Database" order="1" visible="true" weight="0.24130106" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.24962178" />
       <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -771,360 +754,338 @@
     <MESSAGE value="测试1" />
     <MESSAGE value="测试2" />
     <MESSAGE value="测试3" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试3" />
+    <MESSAGE value="测试4" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试4" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
     <find-history />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/009.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/008.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/druid-1.1.6.jar!/com/alibaba/druid/pool/DruidDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="3116" selection-start-line="3116" selection-end-line="3116" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/007.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/012.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-447">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/011.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CategoryDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/010.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/DeleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/images/temp/013.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/USERS">
+    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/PRODUCT">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f69c6ea8-04da-44b1-bec9-1a68271982eb">
+        <state projectRestartId="54d0242b-c451-42e1-9c18-521c4ec15997">
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/ADDRESS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f69c6ea8-04da-44b1-bec9-1a68271982eb">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/topTab.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/item_category.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/CartFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IntegralServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="39" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_integral.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="83" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/_head.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="120">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/NavService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="69" />
+        <state relative-caret-position="154">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_order.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/NavServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="533" column="10" lean-forward="true" selection-start-line="533" selection-start-column="10" selection-end-line="533" selection-end-column="10" />
+        <state relative-caret-position="216">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/item_show.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/Class2Dao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="207" column="76" selection-start-line="207" selection-start-column="75" selection-end-line="207" selection-end-column="76" />
+        <state relative-caret-position="110">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/Class2DaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/_nav.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/AddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/AddressDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/filter/LoginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="88">
+          <caret line="16" column="97" selection-start-line="16" selection-start-column="97" selection-end-line="16" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddCartServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="32" column="62" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-594" />
       </provider>
     </entry>
-    <entry file="jar://D:/apache-tomcat-8.5.41/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddressServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="286">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/text/HelloWorld.java">
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartPayServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/PRODUCT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f69c6ea8-04da-44b1-bec9-1a68271982eb">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/CART">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f69c6ea8-04da-44b1-bec9-1a68271982eb">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartTotal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/CartDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/CartDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/CartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/CartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="73" column="55" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="70" column="152" lean-forward="true" selection-start-line="70" selection-end-line="70" selection-end-column="152" />
+        <state relative-caret-position="110">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartSevlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        <state relative-caret-position="110">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/CartTotal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/DeleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/HotProductServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/IntegralServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderDetailServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/OrderServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/ProductServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAmountServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        <state relative-caret-position="110">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/item_category.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/item_sale_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/item_show.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/AddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/service/impl/AddressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding>
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/UpdateAddressServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_shopcart.jsp">
+    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/ADDRESS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="deae7056-d6ce-4ea6-99f5-f1f96cb132e6">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_address.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="63" column="59" lean-forward="true" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+        <state relative-caret-position="220">
+          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4f15b3e1-a59e-470c-9db1-19d0e27a72f6/schema/YXK/table/USERS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="deae7056-d6ce-4ea6-99f5-f1f96cb132e6">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/udai_welcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1650" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/AddCartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="24" column="71" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/servlet/WelcomeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f15b3e1-a59e-470c-9db1-19d0e27a72f6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="132" selection-start-line="132" selection-end-line="132" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oaec/OnlineStore/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
         </state>
       </provider>
     </entry>

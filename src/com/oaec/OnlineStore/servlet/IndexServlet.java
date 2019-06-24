@@ -2,7 +2,9 @@ package com.oaec.OnlineStore.servlet;
 
 import com.oaec.OnlineStore.entity.Class1;
 import com.oaec.OnlineStore.service.NavService;
+import com.oaec.OnlineStore.service.ProductService;
 import com.oaec.OnlineStore.service.impl.NavServiceImpl;
+import com.oaec.OnlineStore.service.impl.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,9 +18,9 @@ import java.util.Map;
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
     private NavService navService = new NavServiceImpl();
+    private ProductService productService = new ProductServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         List<Class1> navs = navService.getNavs();
         Map<String, List<Map<String, Object>>> nav = navService.getNav();
         List<Map<String, Object>> class1 = nav.get("一级分类");
@@ -28,6 +30,8 @@ public class IndexServlet extends HttpServlet {
         req.setAttribute("class2",class2);
         req.setAttribute("class3",class3);
         req.setAttribute("navs",navs);
+        List<Map<String, Object>> hotProducts = productService.getHotProducts();
+        req.setAttribute("products",hotProducts);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
     }
 }

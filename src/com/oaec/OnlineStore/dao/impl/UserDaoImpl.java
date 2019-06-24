@@ -108,6 +108,12 @@ public class UserDaoImpl extends CommonDao implements UserDao, CommonDao.GetBean
 	}
 
 	@Override
+	public Map<String, Object> queryByUserId(Integer userId) {
+		String sql = "SELECT * FROM USERS WHERE USER_ID = ?";
+		return query4Map(sql,userId);
+	}
+
+	@Override
 	public User getBeanFromResultSet(ResultSet rs) throws SQLException {
 		User user = new User();
 		user.setUserId(rs.getInt("user_id"));

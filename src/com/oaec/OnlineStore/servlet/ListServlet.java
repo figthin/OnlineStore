@@ -27,7 +27,6 @@ public class ListServlet extends HttpServlet {
         req.setAttribute("class1",class1);
         req.setAttribute("class2",class2);
         req.setAttribute("class3",class3);
-
         String name = req.getParameter("name");
         String class1Id = req.getParameter("class1Id");
         String class2Id = req.getParameter("class2Id");

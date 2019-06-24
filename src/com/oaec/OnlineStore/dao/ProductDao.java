@@ -16,4 +16,9 @@ public interface ProductDao {
 
     Map<String,Object> queryByProductId(Integer productId);
 
+    Integer updateSale(Integer productId,Integer num);
+
+    Integer updateStock(Integer productId,Integer num);
+
+    List<Map<String,Object>> queryBySaleDesc();
 }

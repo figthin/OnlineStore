@@ -4,23 +4,7 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <%@include file="_head.jsp"%>
-<%--<head>
-	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="${path}/static/favicon.ico">
-	<link rel="stylesheet" href="${path}/static/css/iconfont.css">
-	<link rel="stylesheet" href="${path}/static/css/global.css">
-	<link rel="stylesheet" href="${path}/static/css/bootstrap.min.css">
-	<link rel="stylesheet" href="${path}/static/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="${path}/static/css/swiper.min.css">
-	<link rel="stylesheet" href="${path}/static/css/styles.css">
-	<script src="${path}/static/js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="${path}/static/js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="${path}/static/js/swiper.min.js" charset="UTF-8"></script>
-	<script src="${path}/static/js/global.js" charset="UTF-8"></script>
-	<script src="${path}/static/js/jquery.DJMask.2.1.1.js" charset="UTF-8"></script>
-	<title>U袋网</title>
 
-</head>--%>
 <body>
 	<!-- 顶部tab -->
 	<div class="tab-header">
@@ -219,7 +203,7 @@
             <div class="swiper-slide"><a href="${path}/WEB-INF/views/item_show.jsp"><img src="${path}/static/images/temp/banner_2.jpg" class="cover"></a></div>
             <div class="swiper-slide"><a href="item_category.jsp"><img src="${path}/static/images/temp/banner_3.jpg" class="cover"></a></div>
             <div class="swiper-slide"><a href="${path}/WEB-INF/views/item_show.jsp"><img src="${path}/static/images/temp/banner_4.jpg" class="cover"></a></div>
-            <div class="swiper-slide"><a href="${path}/item_sale_page.jsp"><img src="${path}/static/images/temp/banner_5.jpg" class="cover"></a></div>
+            <div class="swiper-slide"><a href="${path}/WEB-INF/views/item_sale_page.jsp"><img src="${path}/static/images/temp/banner_5.jpg" class="cover"></a></div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
@@ -230,6 +214,25 @@
 				<div class="floor-title">
 					<i class="iconfont icon-tuijian fz16"></i> 爆款推荐
 					<a href="" class="more"><i class="iconfont icon-more"></i></a>
+				</div>
+				<div class="con-box">
+					<a class="left-img hot-img" href="">
+						<img src="${path}/static/images/floor_1.jpg" alt="" class="cover">
+					</a>
+					<div class="right-box hot-box">
+						<c:forEach items="${requestScope.products}" var="product">
+							<a href="item_show.html" class="floor-item">
+								<div class="item-img hot-img">
+									<img src="${path}/${product.URL}" alt="${product.NAME}" class="cover">
+								</div>
+								<div class="price clearfix">
+									<span class="pull-left cr fz16">￥${product.PRICE}</span>
+									<span class="pull-right c6">进货价</span>
+								</div>
+								<div class="name ep" title="${product.NAME}">${product.NAME}</div>
+							</a>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 			<div class="pull-right">
@@ -267,19 +270,19 @@
 							</a>
 						</div>
 						<div class="but-div">
-							<a href="${path}/item_sale_page.jsp">
+							<a href="${path}/hotProducts">
 								<i class="but-icon"></i>
 								<p>热卖专区</p>
 							</a>
 						</div>
 						<div class="but-div">
-							<a href="${path}/item_sale_page.jsp">
+							<a href="${path}/WEB-INF/views/item_sale_page.jsp">
 								<i class="but-icon"></i>
 								<p>满减专区</p>
 							</a>
 						</div>
 						<div class="but-div">
-							<a href="${path}/item_sale_page.jsp">
+							<a href="${path}/WEB-INF/views/item_sale_page.jsp">
 								<i class="but-icon"></i>
 								<p>折扣专区</p>
 							</a>
@@ -352,60 +355,6 @@
 			</li>
 		</ul>
 	</div>
-	<!-- 底部信息 -->
-	<div class="footer">
-		<div class="footer-tags">
-			<div class="tags-box inner">
-				<div class="tag-div">
-					<img src="${path}/static/images/icons/footer_1.gif" alt="厂家直供">
-				</div>
-				<div class="tag-div">
-					<img src="${path}/static/images/icons/footer_2.gif" alt="一件代发">
-				</div>
-				<div class="tag-div">
-					<img src="${path}/static/images/icons/footer_3.gif" alt="美工活动支持">
-				</div>
-				<div class="tag-div">
-					<img src="${path}/static/images/icons/footer_4.gif" alt="信誉认证">
-				</div>
-			</div>
-		</div>
-		<div class="footer-links inner">
-			<dl>
-				<dt>U袋网</dt>
-				<a href="temp_article/udai_article10.jsp"><dd>企业简介</dd></a>
-				<a href="temp_article/udai_article11.jsp"><dd>加入U袋</dd></a>
-				<a href="temp_article/udai_article12.jsp"><dd>隐私说明</dd></a>
-			</dl>
-			<dl>
-				<dt>服务中心</dt>
-				<a href="temp_article/udai_article1.jsp"><dd>售后服务</dd></a>
-				<a href="temp_article/udai_article2.jsp"><dd>配送服务</dd></a>
-				<a href="temp_article/udai_article3.jsp"><dd>用户协议</dd></a>
-				<a href="temp_article/udai_article4.jsp"><dd>常见问题</dd></a>
-			</dl>
-			<dl>
-				<dt>新手上路</dt>
-				<a href="temp_article/udai_article5.jsp"><dd>如何成为代理商</dd></a>
-				<a href="temp_article/udai_article6.jsp"><dd>代销商上架教程</dd></a>
-				<a href="temp_article/udai_article7.jsp"><dd>分销商常见问题</dd></a>
-				<a href="temp_article/udai_article8.jsp"><dd>付款账户</dd></a>
-			</dl>
-		</div>
-		<div class="copy-box clearfix">
-			<ul class="copy-links">
-				<a href="${path}/agent_level.jsp"><li>网店代销</li></a>
-				<a href="${path}/class_room.jsp"><li>U袋学堂</li></a>
-				<a href="${path}/udai_about.jsp"><li>联系我们</li></a>
-				<a href="temp_article/udai_article10.jsp"><li>企业简介</li></a>
-				<a href="temp_article/udai_article5.jsp"><li>新手上路</li></a>
-			</ul>
-			<!-- 版权 -->
-			<p class="copyright">
-				© 2005-2017 U袋网 版权所有，并保留所有权利<br>
-				ICP备案证书号：闽ICP备16015525号-2&nbsp;&nbsp;&nbsp;&nbsp;福建省宁德市福鼎市南下村小区（锦昌阁）1栋1梯602室&nbsp;&nbsp;&nbsp;&nbsp;Tel: 18650406668&nbsp;&nbsp;&nbsp;&nbsp;E-mail: 18650406668@qq.com
-			</p>
-		</div>
-	</div>
+<%@include file="_foot.jsp"%>
 </body>
 </html>

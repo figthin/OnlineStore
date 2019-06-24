@@ -67,7 +67,6 @@ public class CartDaoImpl extends CommonDao implements CartDao {
         }
         sql.deleteCharAt(sql.length() - 1);
         sql.append(")");
-        System.out.println(sql);
         return query4Map(sql.toString(),param);
     }
 
@@ -75,6 +74,18 @@ public class CartDaoImpl extends CommonDao implements CartDao {
     public Map<String, Object> queryTotalPrice(Integer cartId, Integer productId) {
         String sql = "SELECT CART.AMOUNT * PRODUCT.PRICE totalPrice FROM CART,PRODUCT WHERE CART.PRODUCT_ID = PRODUCT.PRODUCT_ID AND CART.CART_ID = ? AND CART.PRODUCT_ID = ?";
         return query4Map(sql,cartId,productId);
+    }
+
+    @Override
+    public Map<String, Object> queryByCartId(String cartId) {
+        String sql = "SELECT * FROM CART WHERE CART_ID = ?";
+        return query4Map(sql,cartId);
+    }
+
+    @Override
+    public Integer doDeleteByCartId(Integer cartId) {
+        String sql = "DELETE FROM CART WHERE CART_ID = ?";
+        return executeUpdate(sql,cartId);
     }
 
 }

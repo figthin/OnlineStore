@@ -8,11 +8,11 @@
         </div>
         <div class="pull-right">
             <c:if test="${sessionScope.user != null}">
-                <a href="${path}/${path}/logout"><span class="cr">退出登录</span></a>
+                <a href="${path}/logout"><span class="cr">退出登录</span></a>
             </c:if>
             <c:if test="${sessionScope.user == null}">
-                <a href="${path}/${path}/login"><span class="cr">登录</span></a>
-                <a href="${path}/${path}/register">注册</a>
+                <a href="${path}/login"><span class="cr">登录</span></a>
+                <a href="${path}/register">注册</a>
             </c:if>
             <a href="${path}/udai_welcome">我的U袋</a>
             <a href="${path}/udai_order">我的订单</a>
@@ -44,7 +44,7 @@
             </p>--%>
         </div>
         <div class="cart-box">
-            <a href="${path}/${path}/cart" class="cart-but">
+            <a href="${path}/cart" class="cart-but">
                 <i class="iconfont icon-shopcart cr fz16"></i> 购物车 ${requestScope.productNumber} 件
             </a>
         </div>

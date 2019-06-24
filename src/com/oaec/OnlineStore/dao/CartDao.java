@@ -24,4 +24,7 @@ public interface CartDao {
 
     Map<String,Object> queryTotalPrice(Integer cartId,Integer productId);
 
+    Map<String,Object> queryByCartId(String cartId);
+
+    Integer doDeleteByCartId(Integer cartId);
 }
