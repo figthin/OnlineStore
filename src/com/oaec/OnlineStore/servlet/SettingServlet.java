@@ -12,16 +12,16 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet("/integral")
-public class IntegralServlet extends HttpServlet {
+@WebServlet("/setting")
+public class SettingServlet extends HttpServlet {
     private UserService userService = new UserServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Map<String,Object> user = (Map<String, Object>) session.getAttribute("user");
+        Map<String,Object> user = (Map<String, Object>)session.getAttribute("user");
         int user_id = Integer.parseInt(user.get("USER_ID").toString());
-        Map<String, Object> userByUserId = userService.getUserByUserId(user_id);
-        req.setAttribute("user",userByUserId);
-        req.getRequestDispatcher("/WEB-INF/views/udai_integral.jsp").forward(req,resp);
+        Map<String, Object> map = userService.getUserByUserId(user_id);
+        req.setAttribute("user",map);
+        req.getRequestDispatcher("/WEB-INF/views/udai_setting.jsp").forward(req,resp);
     }
 }

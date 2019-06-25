@@ -114,6 +114,24 @@ public class UserDaoImpl extends CommonDao implements UserDao, CommonDao.GetBean
 	}
 
 	@Override
+	public Integer doUpdate(Map<String,Object> map) {
+		String sql = "UPDATE USERS SET USER_NAME = ?,GENDER = ?,BIRTH = TO_DATE(?,'yyyy-mm-dd') WHERE USER_ID = ?";
+		return executeUpdate(sql,map.get("userName"),map.get("gender"),map.get("birth"),map.get("userId"));
+	}
+
+	@Override
+	public Integer doUpdate(Integer userId, Integer money) {
+		String sql = "UPDATE USERS SET USERS.balance = USERS.balance + ? WHERE USER_ID = ?";
+		return executeUpdate(sql,money,userId);
+	}
+
+	@Override
+	public Integer doUpdate(Integer userId) {
+		String sql = "UPDATE USERS SET CHECK_IN = CHECK_IN + 1,INTEGRAL = INTEGRAL + 3 WHERE USER_ID = ?";
+		return executeUpdate(sql,userId);
+	}
+
+	@Override
 	public User getBeanFromResultSet(ResultSet rs) throws SQLException {
 		User user = new User();
 		user.setUserId(rs.getInt("user_id"));

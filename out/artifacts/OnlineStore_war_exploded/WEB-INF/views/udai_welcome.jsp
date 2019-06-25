@@ -86,18 +86,29 @@
 							<img src="${path}/static/images/icons/default_avt.png" alt="用户名" class="cover b-r50">
 							<a href="${path}/setting" class="edit"><i class="iconfont icon-edit"></i></a>
 						</div>
-						<p class="name text-nowrap">您好，18759808122！</p>
-						<p class="money text-nowrap">余额：¥88.0</p>
-						<p class="level text-nowrap">身份：普通会员 <a href="${path}/agent_level">提升</a></p>
+						<p class="name text-nowrap">您好，${sessionScope.user.USER_NAME}！</p>
+						<p class="money text-nowrap">余额：¥${sessionScope.user.BALANCE}</p>
+						<c:if test="${sessionScope.user.IS_MEMBER == 0}">
+							<p class="level text-nowrap">身份：普通会员 <a href="${path}/agent_level">提升</a></p>
+						</c:if>
+						<c:if test="${sessionScope.user.IS_MEMBER == 1}">
+							<p class="level text-nowrap">身份：银牌会员 <a href="${path}/agent_level">提升</a></p>
+						</c:if>
+						<c:if test="${sessionScope.user.IS_MEMBER == 2}">
+							<p class="level text-nowrap">身份：超级会员 <a href="${path}/agent_level">提升</a></p>
+						</c:if>
+						<c:if test="${sessionScope.user.IS_MEMBER == 3}">
+							<p class="level text-nowrap">身份：VIP会员 <a href="${path}/agent_level">续费</a></p>
+						</c:if>
 					</div>
 					<div class="pull-right user-nav">
 						<a href="${path}/order" class="user-nav__but">
 							<i class="iconfont icon-rmb fz40 cr"></i>
-							<div class="c6">待支付 <span class="cr">1</span></div>
+							<div class="c6">待支付 <span class="cr">${requestScope.status0.size()}</span></div>
 						</a>
 						<a href="${path}/order" class="user-nav__but">
 							<i class="iconfont icon-eval fz40 cr"></i>
-							<div class="c6">待评价 <span class="c3">0</span></div>
+							<div class="c6">待评价 <span class="c3">${requestScope.status2.size()}</span></div>
 						</a>
 						<a href="${path}/collection" class="user-nav__but">
 							<i class="iconfont icon-star fz40 cr"></i>
@@ -109,7 +120,7 @@
 						</a>
 						<a href="${path}/integral" class="user-nav__but">
 							<i class="iconfont icon-jifen fz40 cr"></i>
-							<div class="c6">积分 <span class="cr">200</span></div>
+							<div class="c6">积分 <span class="cr">${requestScope.user.INTEGRAL}</span></div>
 						</a>
 						<a href="${path}/message" class="user-nav__but">
 							<i class="iconfont icon-xiaoxi fz40 cr"></i>
@@ -120,333 +131,417 @@
 				<div class="order-list__div bgf">
 					<div class="user-title">
 						我的订单<span class="c6">（显示最新三条）</span>
-						<a href="${path}/" class="pull-right">查看所有订单></a>
+						<a href="${path}/order" class="pull-right">查看所有订单></a>
 					</div>
 					<div class="order-panel">
 						<ul class="nav user-nav__title" role="tablist">
 							<li role="presentation" class="nav-item active"><a href="${path}/#all" aria-controls="all" role="tab" data-toggle="tab">所有订单</a></li>
-							<li role="presentation" class="nav-item "><a href="${path}/#pay" aria-controls="pay" role="tab" data-toggle="tab">待付款 <span class="cr">0</span></a></li>
-							<li role="presentation" class="nav-item "><a href="${path}/#emit" aria-controls="emit" role="tab" data-toggle="tab">待发货 <span class="cr">0</span></a></li>
-							<li role="presentation" class="nav-item "><a href="${path}/#take" aria-controls="take" role="tab" data-toggle="tab">待收货 <span class="cr">0</span></a></li>
-							<li role="presentation" class="nav-item "><a href="${path}/#eval" aria-controls="eval" role="tab" data-toggle="tab">待评价 <span class="cr">0</span></a></li>
+							<li role="presentation" class="nav-item "><a href="${path}/#pay" aria-controls="pay" role="tab" data-toggle="tab">待付款 <span class="cr">${requestScope.status0.size()}</span></a></li>
+							<li role="presentation" class="nav-item "><a href="${path}/#emit" aria-controls="emit" role="tab" data-toggle="tab">待发货 <span class="cr">${requestScope.status1.size()}</span></a></li>
+							<li role="presentation" class="nav-item "><a href="${path}/#take" aria-controls="take" role="tab" data-toggle="tab">待收货 <span class="cr">${requestScope.status1.size()}</span></a></li>
+							<li role="presentation" class="nav-item "><a href="${path}/#eval" aria-controls="eval" role="tab" data-toggle="tab">待评价 <span class="cr">${requestScope.status2.size()}</span></a></li>
 						</ul>
 
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane fade in active" id="all">
 								<table class="table text-center">
 									<tr>
-										<th width="380">商品信息</th>
-										<th width="85">单价</th>
-										<th width="85">数量</th>
-										<th width="120">实付款</th>
+										<th width="380">订单信息</th>
+										<th width="85">收货地址</th>
+<%--										<th width="85">数量</th>--%>
+<%--										<th width="120">实付款</th>--%>
 										<th width="120">交易状态</th>
 										<th width="120">交易操作</th>
 									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">等待付款</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
-											<!-- <a href="${path}/" class="but but-link">评价</a> -->
-											<a href="${path}/" class="but c3">取消订单</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">等待收货</a>
-											<a href="${path}/mail_query" class="but cr">查看物流</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/order_receipted" class="but but-primary">确认收货</a>
-											<!-- <a href="${path}/" class="but but-link">评价</a> -->
-											<a href="${path}/apply_return" class="but c3">退款/退货</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">交易成功</a>
-											<a href="${path}/mail_query" class="but cr">查看物流</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/" class="but but-link">评价</a>
-											<a href="${path}/" class="but c3">取消订单</a>
-										</td>
-									</tr>
+									<c:forEach items="${requestScope.latestOrders}" var="order">
+										<tr class="order-item">
+											<td>
+												<label>
+													<div class="num">
+														<!-- <input type="checkbox"> -->
+														下单时间：${order.TIME_CREATE}<br>
+														订单号: ${order.ORDERS_ID}
+													</div>
+													<%--<div class="card">
+														<div class="img"><img src="${path}/${order}" alt="" class="cover"></div>
+														<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
+														<div class="format">颜色分类：深棕色  尺码：均码</div>
+														<div class="favour">使用优惠券：优惠¥2.00</div>
+													</div>--%>
+												</label>
+											</td>
+											<td>${order.address.ADDRESS_DETAIL}</td>
+<%--											<td>1</td>--%>
+<%--											<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>--%>
+											<c:if test="${order.ORDER_STATUS == 0}">
+												<td class="state">
+													<a class="but c6">等待付款</a>
+													<a href="${path}/order_detail?orderId=${order.ORDERS_ID}" class="but c9">订单详情</a>
+												</td>
+												<td class="order">
+													<div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+													<a href="shopcart_pay" class="but but-primary">立即付款</a>
+													<!-- <a href="" class="but but-link">评价</a> -->
+													<a href="" class="but c3">取消订单</a>
+												</td>
+											</c:if>
+											<c:if test="${order.ORDER_STATUS == 1}">
+												<td class="state">
+													<a class="but c6">等待收货</a>
+													<a href="udai_mail_query" class="but cr">查看物流</a>
+													<a href="udai_order_detail" class="but c9">订单详情</a>
+												</td>
+												<td class="order">
+													<div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+													<a href="udai_order_receipted" class="but but-primary">确认收货</a>
+													<!-- <a href="" class="but but-link">评价</a> -->
+													<a href="udai_apply_return" class="but c3">退款/退货</a>
+												</td>
+											</c:if>
+											<c:if test="${order.ORDER_STATUS == 2}">
+												<td class="state">
+													<a class="but c6">交易成功</a>
+													<a href="udai_mail_query" class="but cr">查看物流</a>
+													<a href="udai_order_detail" class="but c9">订单详情</a>
+												</td>
+												<td class="order">
+													<div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+													<a href="" class="but but-link">评价</a>
+													<a href="" class="but c3">取消订单</a>
+												</td>
+											</c:if>
+											<%--<td class="state">
+												<a class="but c6">等待付款</a>
+												<a href="${path}/" class="but c9">订单详情</a>
+											</td>
+											<td class="order">
+												<a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
+												<!-- <a href="${path}/" class="but but-link">评价</a> -->
+												<a href="${path}/" class="but c3">取消订单</a>
+											</td>--%>
+										</tr>
+									</c:forEach>
 								</table>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="pay">
 								<table class="table text-center">
-									<tr>
-										<th width="380">商品信息</th>
-										<th width="85">单价</th>
-										<th width="85">数量</th>
-										<th width="120">实付款</th>
-										<th width="120">交易状态</th>
-										<th width="120">交易操作</th>
-									</tr>
-									<tr class="order-empty"><td colspan='6'>
-										<div class="empty-msg">最近没有任何订单，家里好像缺了点什么！<br><a href="${path}/item_category">要不瞧瞧去？</a></div>
-									</td></tr>
+                                    <tr>
+                                        <th width="380">订单信息</th>
+                                        <th width="85">收货地址</th>
+                                        <%--<th width="85">数量</th>--%>
+                                        <%--<th width="120">实付款</th>--%>
+                                        <th width="120">交易状态</th>
+                                        <th width="120">交易操作</th>
+                                    </tr>
+                                    <c:forEach items="${requestScope.status0}" var="order">
+                                        <tr class="order-item">
+                                            <td>
+                                                <label>
+                                                    <div class="num">
+                                                        <!-- <input type="checkbox"> -->
+                                                        下单时间：${order.TIME_CREATE}<br>
+                                                        订单号: ${order.ORDERS_ID}
+                                                    </div>
+                                                        <%--<div class="card">
+                                                            <div class="img"><img src="${path}/${order}" alt="" class="cover"></div>
+                                                            <div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
+                                                            <div class="format">颜色分类：深棕色  尺码：均码</div>
+                                                            <div class="favour">使用优惠券：优惠¥2.00</div>
+                                                        </div>--%>
+                                                </label>
+                                            </td>
+                                            <td>${order.address.ADDRESS_DETAIL}</td>
+                                                <%--											<td>1</td>--%>
+                                                <%--											<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>--%>
+                                            <c:if test="${order.ORDER_STATUS == 0}">
+                                                <td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/order_detail?orderId=${order.ORDERS_ID}" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 1}">
+                                                <td class="state">
+                                                    <a class="but c6">等待收货</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="udai_order_receipted" class="but but-primary">确认收货</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="udai_apply_return" class="but c3">退款/退货</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 2}">
+                                                <td class="state">
+                                                    <a class="but c6">交易成功</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="" class="but but-link">评价</a>
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                                <%--<td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="${path}/" class="but but-link">评价</a> -->
+                                                    <a href="${path}/" class="but c3">取消订单</a>
+                                                </td>--%>
+                                        </tr>
+                                    </c:forEach>
 								</table>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="emit">
-								<table class="table text-center">
-									<tr>
-										<th width="380">商品信息</th>
-										<th width="85">单价</th>
-										<th width="85">数量</th>
-										<th width="120">实付款</th>
-										<th width="120">交易状态</th>
-										<th width="120">交易操作</th>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">等待发货</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/order_receipted" class="but but-primary">确认收货</a>
-											<a href="${path}/apply_return" class="but c3">退款/退货</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">等待发货</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/order_receipted" class="but but-primary">确认收货</a>
-											<a href="${path}/apply_return" class="but c3">退款/退货</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">等待发货</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/order_receipted" class="but but-primary">确认收货</a>
-											<a href="${path}/apply_return" class="but c3">退款/退货</a>
-										</td>
-									</tr>
-								</table>
+                                <table class="table text-center">
+                                    <tr>
+                                        <th width="380">订单信息</th>
+                                        <th width="85">收货地址</th>
+                                        <%--<th width="85">数量</th>--%>
+                                        <%--<th width="120">实付款</th>--%>
+                                        <th width="120">交易状态</th>
+                                        <th width="120">交易操作</th>
+                                    </tr>
+                                    <c:forEach items="${requestScope.status1}" var="order">
+                                        <tr class="order-item">
+                                            <td>
+                                                <label>
+                                                    <div class="num">
+                                                        <!-- <input type="checkbox"> -->
+                                                        下单时间：${order.TIME_CREATE}<br>
+                                                        订单号: ${order.ORDERS_ID}
+                                                    </div>
+                                                        <%--<div class="card">
+                                                            <div class="img"><img src="${path}/${order}" alt="" class="cover"></div>
+                                                            <div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
+                                                            <div class="format">颜色分类：深棕色  尺码：均码</div>
+                                                            <div class="favour">使用优惠券：优惠¥2.00</div>
+                                                        </div>--%>
+                                                </label>
+                                            </td>
+                                            <td>${order.address.ADDRESS_DETAIL}</td>
+                                                <%--											<td>1</td>--%>
+                                                <%--											<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>--%>
+                                            <c:if test="${order.ORDER_STATUS == 0}">
+                                                <td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/order_detail?orderId=${order.ORDERS_ID}" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 1}">
+                                                <td class="state">
+                                                    <a class="but c6">等待收货</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="udai_order_receipted" class="but but-primary">确认收货</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="udai_apply_return" class="but c3">退款/退货</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 2}">
+                                                <td class="state">
+                                                    <a class="but c6">交易成功</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="" class="but but-link">评价</a>
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                                <%--<td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="${path}/" class="but but-link">评价</a> -->
+                                                    <a href="${path}/" class="but c3">取消订单</a>
+                                                </td>--%>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="take">
-								<table class="table text-center">
-									<tr>
-										<th width="380">商品信息</th>
-										<th width="85">单价</th>
-										<th width="85">数量</th>
-										<th width="120">实付款</th>
-										<th width="120">交易状态</th>
-										<th width="120">交易操作</th>
-									</tr>
-									<tr class="order-empty"><td colspan='6'>
-										<div class="empty-msg">最近没有任何订单，家里好像缺了点什么！<br><a href="${path}/item_category">要不瞧瞧去？</a></div>
-									</td></tr>
-								</table>
+                                <table class="table text-center">
+                                    <tr>
+                                        <th width="380">订单信息</th>
+                                        <th width="85">收货地址</th>
+                                        <%--<th width="85">数量</th>--%>
+                                        <%--<th width="120">实付款</th>--%>
+                                        <th width="120">交易状态</th>
+                                        <th width="120">交易操作</th>
+                                    </tr>
+                                    <c:forEach items="${requestScope.status1}" var="order">
+                                        <tr class="order-item">
+                                            <td>
+                                                <label>
+                                                    <div class="num">
+                                                        <!-- <input type="checkbox"> -->
+                                                        下单时间：${order.TIME_CREATE}<br>
+                                                        订单号: ${order.ORDERS_ID}
+                                                    </div>
+                                                        <%--<div class="card">
+                                                            <div class="img"><img src="${path}/${order}" alt="" class="cover"></div>
+                                                            <div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
+                                                            <div class="format">颜色分类：深棕色  尺码：均码</div>
+                                                            <div class="favour">使用优惠券：优惠¥2.00</div>
+                                                        </div>--%>
+                                                </label>
+                                            </td>
+                                            <td>${order.address.ADDRESS_DETAIL}</td>
+                                                <%--											<td>1</td>--%>
+                                                <%--											<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>--%>
+                                            <c:if test="${order.ORDER_STATUS == 0}">
+                                                <td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/order_detail?orderId=${order.ORDERS_ID}" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 1}">
+                                                <td class="state">
+                                                    <a class="but c6">等待收货</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="udai_order_receipted" class="but but-primary">确认收货</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="udai_apply_return" class="but c3">退款/退货</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 2}">
+                                                <td class="state">
+                                                    <a class="but c6">交易成功</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="" class="but but-link">评价</a>
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                                <%--<td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="${path}/" class="but but-link">评价</a> -->
+                                                    <a href="${path}/" class="but c3">取消订单</a>
+                                                </td>--%>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="eval">
-								<table class="table text-center">
-									<tr>
-										<th width="450">商品信息</th>
-										<th width="85">单价</th>
-										<th width="85">数量</th>
-										<th width="120">实付款</th>
-										<th width="120">交易状态</th>
-										<th width="120">交易操作</th>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">交易成功</a>
-											<a href="${path}/mail_query" class="but cr">查看物流</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/" class="but but-link">评价</a>
-											<a href="${path}/" class="but c3">取消订单</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">交易成功</a>
-											<a href="${path}/mail_query" class="but cr">查看物流</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/" class="but but-link">评价</a>
-											<a href="${path}/" class="but c3">取消订单</a>
-										</td>
-									</tr>
-									<tr class="order-item">
-										<td>
-											<label>
-												<div class="num">
-													<!-- <input type="checkbox"> -->
-													2017-03-30 订单号: 2669901385864042
-												</div>
-												<div class="card">
-													<div class="img"><img src="${path}/static/images/temp/item-img_1.jpg" alt="" class="cover"></div>
-													<div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
-													<div class="format">颜色分类：深棕色  尺码：均码</div>
-													<div class="favour">使用优惠券：优惠¥2.00</div>
-												</div>
-											</label>
-										</td>
-										<td>$100</td>
-										<td>1</td>
-										<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>
-										<td class="state">
-											<a class="but c6">交易成功</a>
-											<a href="${path}/mail_query" class="but cr">查看物流</a>
-											<a href="${path}/" class="but c9">订单详情</a>
-										</td>
-										<td class="order">
-											<a href="${path}/" class="but but-link">评价</a>
-											<a href="${path}/" class="but c3">取消订单</a>
-										</td>
-									</tr>
-								</table>
+                                <table class="table text-center">
+                                    <tr>
+                                        <th width="380">订单信息</th>
+                                        <th width="85">收货地址</th>
+                                        <%--<th width="85">数量</th>--%>
+                                        <%--<th width="120">实付款</th>--%>
+                                        <th width="120">交易状态</th>
+                                        <th width="120">交易操作</th>
+                                    </tr>
+                                    <c:forEach items="${requestScope.status2}" var="order">
+                                        <tr class="order-item">
+                                            <td>
+                                                <label>
+                                                    <div class="num">
+                                                        <!-- <input type="checkbox"> -->
+                                                        下单时间：${order.TIME_CREATE}<br>
+                                                        订单号: ${order.ORDERS_ID}
+                                                    </div>
+                                                        <%--<div class="card">
+                                                            <div class="img"><img src="${path}/${order}" alt="" class="cover"></div>
+                                                            <div class="name ep2">纯色圆领短袖T恤活动衫弹力柔软纯色圆领短袖T恤</div>
+                                                            <div class="format">颜色分类：深棕色  尺码：均码</div>
+                                                            <div class="favour">使用优惠券：优惠¥2.00</div>
+                                                        </div>--%>
+                                                </label>
+                                            </td>
+                                            <td>${order.address.ADDRESS_DETAIL}</td>
+                                                <%--											<td>1</td>--%>
+                                                <%--											<td>$1000<br><span class="fz12 c6 text-nowrap">(含运费: ¥0.00)</span></td>--%>
+                                            <c:if test="${order.ORDER_STATUS == 0}">
+                                                <td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/order_detail?orderId=${order.ORDERS_ID}" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 1}">
+                                                <td class="state">
+                                                    <a class="but c6">等待收货</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="udai_order_receipted" class="but but-primary">确认收货</a>
+                                                    <!-- <a href="" class="but but-link">评价</a> -->
+                                                    <a href="udai_apply_return" class="but c3">退款/退货</a>
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 2}">
+                                                <td class="state">
+                                                    <a class="but c6">交易成功</a>
+                                                    <a href="udai_mail_query" class="but cr">查看物流</a>
+                                                    <a href="udai_order_detail" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <div class="del"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+                                                    <a href="" class="but but-link">评价</a>
+                                                    <a href="" class="but c3">取消订单</a>
+                                                </td>
+                                            </c:if>
+                                                <%--<td class="state">
+                                                    <a class="but c6">等待付款</a>
+                                                    <a href="${path}/" class="but c9">订单详情</a>
+                                                </td>
+                                                <td class="order">
+                                                    <a href="${path}/shopcart_pay" class="but but-primary">立即付款</a>
+                                                    <!-- <a href="${path}/" class="but but-link">评价</a> -->
+                                                    <a href="${path}/" class="but c3">取消订单</a>
+                                                </td>--%>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
 							</div>
 						</div>
 					</div>

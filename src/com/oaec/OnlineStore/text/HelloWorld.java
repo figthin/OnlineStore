@@ -1,5 +1,6 @@
 package com.oaec.OnlineStore.text;
 
+import com.alibaba.fastjson.JSON;
 import com.oaec.OnlineStore.dao.CartDao;
 import com.oaec.OnlineStore.dao.Class2Dao;
 import com.oaec.OnlineStore.dao.OrderDetailDao;
@@ -22,11 +23,8 @@ import java.util.Map;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        /*OrderServiceImpl orderService = new OrderServiceImpl();
-        List<Map<String, Object>> orders = orderService.getOrders(1023);*/
-        OrderDetailDao orderDetailDao = new OrderDetailDaoImpl();
-        Double aDouble = orderDetailDao.queryTotalPriceByOrderId(11011);
-        System.out.println("aDouble = " + aDouble);
-
+        OrderServiceImpl orderService = new OrderServiceImpl();
+        Map<String, List<Map<String, Object>>> ordersByStatus = orderService.getOrdersByStatus(1004);
+        System.out.println(JSON.toJSONString(ordersByStatus));
     }
 }

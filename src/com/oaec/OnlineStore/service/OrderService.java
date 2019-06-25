@@ -11,4 +11,8 @@ public interface OrderService {
     Boolean addOrder(Integer orderId,Integer userId,Integer addressId);
 
     Integer getOrderId();
+
+    List<Map<String,Object>> getLatestOrders(Integer userId);
+
+    Map<String,List<Map<String,Object>>> getOrdersByStatus(Integer userId);
 }

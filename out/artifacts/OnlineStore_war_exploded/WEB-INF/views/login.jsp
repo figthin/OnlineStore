@@ -43,6 +43,7 @@
 							if (res.uri){
 								location = res.uri;
 							}else{
+								alert("成功！");
 								location = "${path}/index";
 							}
 						}else{
@@ -78,7 +79,7 @@
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
 								</div>
-								<input value="18063446251" class="form-control phone" name="phone" id="login_phone" required placeholder="手机号" maxlength="11" autocomplete="off" type="text">
+								<input class="form-control phone" name="phone" id="login_phone" required placeholder="手机号" maxlength="11" autocomplete="off" type="text">
 							</div>
 						</div>
 						<div class="form-group">
@@ -86,7 +87,7 @@
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 								</div>
-								<input value="123456" class="form-control password" name="password" id="login_pwd" placeholder="请输入密码" autocomplete="off" type="password">
+								<input class="form-control password" name="password" id="login_pwd" placeholder="请输入密码" autocomplete="off" type="password">
 								<div class="input-group-addon pwd-toggle" title="显示密码"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></div>
 							</div>
 						</div>

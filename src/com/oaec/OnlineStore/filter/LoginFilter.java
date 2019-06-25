@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter({"/cart","/welcome","/order","/integral","/addCart","/order_detail","/shopcart_pay","/address"})
+@WebFilter({"/cart","/welcome","/order","/integral","/addCart","/order_detail","/shopcart_pay","/address","/setting","/treasurer"})
 public class LoginFilter extends HttpFilter {
 
     private boolean isAjax(HttpServletRequest request){

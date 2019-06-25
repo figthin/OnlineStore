@@ -52,4 +52,29 @@ public class UserServiceImpl extends CommonDao implements UserService {
             return map;
         }
     }
+
+    @Override
+    public Map<String, Object> getUserByUserId(Integer userId) {
+        return userDao.queryByUserId(userId);
+    }
+
+    @Override
+    public Boolean modifyUserMessage(String userName, String gender, String birth, Integer userId) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("userName",userName);
+        map.put("gender",gender);
+        map.put("birth",birth);
+        map.put("userId",userId);
+        return userDao.doUpdate(map) == 1;
+    }
+
+    @Override
+    public Boolean charge(Integer userId, Integer money) {
+        return userDao.doUpdate(userId,money) == 1;
+    }
+
+    @Override
+    public Boolean checkIn(Integer userId) {
+        return userDao.doUpdate(userId) == 1;
+    }
 }

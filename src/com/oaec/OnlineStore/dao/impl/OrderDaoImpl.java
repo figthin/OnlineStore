@@ -31,5 +31,28 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
         return Integer.parseInt(query4Map(sql).get("ORDERID").toString());
     }
 
+    @Override
+    public List<Map<String, Object>> queryLatestOrders(Integer userId) {
+        String sql = "SELECT ROWNUM,temp.* FROM (SELECT * FROM ORDERS WHERE USER_ID = ? ORDER BY TIME_CREATE DESC) temp WHERE ROWNUM <= 3";
+        return query4MapList(sql,userId);
+    }
+
+    @Override
+    public List<Map<String, Object>> queryByOrderStatusIs0(Integer userId) {
+        String sql = "SELECT * FROM ORDERS WHERE ORDER_STATUS = 0 AND USER_ID = ?";
+        return query4MapList(sql,userId);
+    }
+
+    @Override
+    public List<Map<String, Object>> queryByOrderStatusIs1(Integer userId) {
+        String sql = "SELECT * FROM ORDERS WHERE ORDER_STATUS = 1 AND USER_ID = ?";
+        return query4MapList(sql,userId);
+    }
+
+    @Override
+    public List<Map<String, Object>> queryByOrderStatusIs2(Integer userId) {
+        String sql = "SELECT * FROM ORDERS WHERE ORDER_STATUS = 2 AND USER_ID = ?";
+        return query4MapList(sql,userId);
+    }
 
 }

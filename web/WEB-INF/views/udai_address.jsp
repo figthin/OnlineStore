@@ -7,7 +7,6 @@
 <script type="text/javascript">
 	$(function () {
 		$(":button").click(function () {
-			alert("hhhhhh")
 			var form = $(this).parent().parent().parent();
 			var name = form.children().children("div").children("input")[0].value;
 			var address = form.children().children("div").children("input")[1].value;

@@ -30,4 +30,9 @@ public class AddressServiceImpl implements AddressService {
     public Boolean clearDefaultAddress() {
         return addressDao.ClearDefaultAddress() > 0;
     }
+
+    @Override
+    public Map<String, Object> getByAddressId(Integer addressId) {
+        return addressDao.queryByAddressId(addressId);
+    }
 }

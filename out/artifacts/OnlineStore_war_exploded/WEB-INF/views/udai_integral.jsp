@@ -11,7 +11,7 @@
 			<div class="pull-left">
 				<div class="pull-left">嗨，欢迎来到<span class="cr">U袋网</span></div>
 				<a href="agent_level">网店代销</a>
-				<a href="temp_article/udai_article4">帮助中心</a>
+				<a href="temp_article/article4">帮助中心</a>
 			</div>
 			<div class="pull-right">
 				<c:if test="${sessionScope.user != null}">
@@ -39,44 +39,44 @@
 	<div class="content clearfix bgf5">
 		<section class="user-center inner clearfix">
 			<div class="pull-left bgf">
-				<a href="udai_welcome" class="title">U袋欢迎页</a>
+				<a href="welcome" class="title">U袋欢迎页</a>
 				<dl class="user-center__nav">
 					<dt>帐户信息</dt>
-					<a href="udai_setting"><dd>个人资料</dd></a>
-					<a href="udai_treasurer"><dd>资金管理</dd></a>
-					<a href="udai_integral"><dd class="active">积分平台</dd></a>
-					<a href="udai_address"><dd>收货地址</dd></a>
-					<a href="udai_coupon"><dd>我的优惠券</dd></a>
-					<a href="udai_paypwd_modify"><dd>修改支付密码</dd></a>
-					<a href="udai_pwd_modify"><dd>修改登录密码</dd></a>
+					<a href="setting"><dd>个人资料</dd></a>
+					<a href="treasurer"><dd>资金管理</dd></a>
+					<a href="integral"><dd class="active">积分平台</dd></a>
+					<a href="address"><dd>收货地址</dd></a>
+					<a href="coupon"><dd>我的优惠券</dd></a>
+					<a href="paypwd_modify"><dd>修改支付密码</dd></a>
+					<a href="pwd_modify"><dd>修改登录密码</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>订单中心</dt>
-					<a href="udai_order"><dd>我的订单</dd></a>
-					<a href="udai_collection"><dd>我的收藏</dd></a>
-					<a href="udai_refund"><dd>退款/退货</dd></a>
+					<a href="order"><dd>我的订单</dd></a>
+					<a href="collection"><dd>我的收藏</dd></a>
+					<a href="refund"><dd>退款/退货</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>服务中心</dt>
-					<a href="udai_mail_query"><dd>物流查询</dd></a>
+					<a href="mail_query"><dd>物流查询</dd></a>
 					<a href=""><dd>数据自助下载</dd></a>
-					<a href="temp_article/udai_article1"><dd>售后服务</dd></a>
-					<a href="temp_article/udai_article2"><dd>配送服务</dd></a>
-					<a href="temp_article/udai_article3"><dd>用户协议</dd></a>
-					<a href="temp_article/udai_article4"><dd>常见问题</dd></a>
+					<a href="temp_article/article1"><dd>售后服务</dd></a>
+					<a href="temp_article/article2"><dd>配送服务</dd></a>
+					<a href="temp_article/article3"><dd>用户协议</dd></a>
+					<a href="temp_article/article4"><dd>常见问题</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>新手上路</dt>
-					<a href="temp_article/udai_article5"><dd>如何成为代理商</dd></a>
-					<a href="temp_article/udai_article6"><dd>代销商上架教程</dd></a>
-					<a href="temp_article/udai_article7"><dd>分销商常见问题</dd></a>
-					<a href="temp_article/udai_article8"><dd>付款账户</dd></a>
+					<a href="temp_article/article5"><dd>如何成为代理商</dd></a>
+					<a href="temp_article/article6"><dd>代销商上架教程</dd></a>
+					<a href="temp_article/article7"><dd>分销商常见问题</dd></a>
+					<a href="temp_article/article8"><dd>付款账户</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>U袋网</dt>
-					<a href="temp_article/udai_article10"><dd>企业简介</dd></a>
-					<a href="temp_article/udai_article11"><dd>加入U袋</dd></a>
-					<a href="temp_article/udai_article12"><dd>隐私说明</dd></a>
+					<a href="temp_article/article10"><dd>企业简介</dd></a>
+					<a href="temp_article/article11"><dd>加入U袋</dd></a>
+					<a href="temp_article/article12"><dd>隐私说明</dd></a>
 				</dl>
 			</div>
 			<div class="pull-right">
@@ -89,7 +89,7 @@
 					<div class="integral-box clearfix bgf5">
 						<div class="integral-total">
 							<div class="fz16">可用的积分</div>
-							<b class="num">888</b>
+							<b class="num">${requestScope.user.INTEGRAL}</b>
 						</div>
 						<div class="integral-desc">
 							<b class="cr fz16">积分使用规则：</b><br>
@@ -474,19 +474,19 @@
 	<div class="right-nav">
 		<ul class="r-with-gotop">
 			<li class="r-toolbar-item">
-				<a href="udai_welcome" class="r-item-hd">
+				<a href="welcome" class="r-item-hd">
 					<i class="iconfont icon-user" data-badge="0"></i>
 					<div class="r-tip__box"><span class="r-tip-text">用户中心</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_shopcart" class="r-item-hd">
+				<a href="shopcart" class="r-item-hd">
 					<i class="iconfont icon-cart"></i>
 					<div class="r-tip__box"><span class="r-tip-text">购物车</span></div>
 				</a>
 			</li>
 			<li class="r-toolbar-item">
-				<a href="udai_collection" class="r-item-hd">
+				<a href="collection" class="r-item-hd">
 					<i class="iconfont icon-aixin"></i>
 					<div class="r-tip__box"><span class="r-tip-text">我的收藏</span></div>
 				</a>

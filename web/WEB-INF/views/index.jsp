@@ -4,7 +4,27 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <%@include file="_head.jsp"%>
-
+<script type="text/javascript">
+	function checkIn(e) {
+		$.ajax({
+			url:"${path}/checkIn",
+			type:"get",
+			success:function (res) {
+				var days = res.checkIn;
+				var integral = res.integral;
+				if (res.result) {
+					alert("签到成功！");
+					$(e).text("已签到"+days+"天");
+					console.log($("#div-integral").text());
+					$("#div-integral").text("积分: "+integral+"")
+				}else {
+					alert("签到失败！");
+				}
+			}
+		});
+		console.log($(e).text())
+	}
+</script>
 <body>
 	<!-- 顶部tab -->
 	<div class="tab-header">
@@ -15,10 +35,10 @@
 				<a href="temp_article/udai_article4.jsp">帮助中心</a>
 			</div>
 			<div class="pull-right">
-				<c:if test="${sessionScope.user != null}">
+				<c:if test="${requestScope.user != null}">
 					<a href="${path}/logout"><span class="cr">退出登录</span></a>
 				</c:if>
-				<c:if test="${sessionScope.user == null}">
+				<c:if test="${requestScope.user == null}">
 					<a href="${path}/login"><span class="cr">登录</span></a>
 					<a href="${path}/register">注册</a>
 				</c:if>
@@ -141,15 +161,15 @@
 						<img src="${path}/static/images/icons/default_avt.png" alt="欢迎来到U袋网" class="cover b-r50">
 					</div>
 					<!-- 已登录 -->
-					<div class="name c6">Hi~ <span class="cr">${sessionScope.user.USER_NAME}</span></div>
-					<div class="point c6">积分: ${sessionScope.user.INTEGRAL}</div>
+					<div class="name c6">Hi~ <span class="cr">${requestScope.user.USER_NAME}</span></div>
+					<div class="point c6" id="div-integral">积分: ${requestScope.user.INTEGRAL}</div>
 
 					<!-- 未登录 -->
 					<!-- <div class="name c6">Hi~ 你好</div>
 					<div class="point c6"><a href="">点此登录</a>，发现更多精彩</div> -->
 					<div class="report-box">
 <%--						<span class="badge">+30</span>--%>
-						<a class="btn btn-info btn-block<%-- disabled--%>" href="#" role="button">已签到${sessionScope.user.CHECK_IN}天</a>
+						<a class="btn btn-info btn-block<%-- disabled--%>" href="#" onclick="checkIn(this)" role="button">已签到${requestScope.user.CHECK_IN}天</a>
 <%--						<a class="btn btn-primary btn-block" href="#" role="button">签到领积分</a>--%>
 					</div>
 				</div>

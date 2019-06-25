@@ -11,5 +11,13 @@ public interface OrderDao {
     Integer doInsert(Map<String,Object> map);
 
     Integer queryOrderId();
+
+    List<Map<String,Object>> queryLatestOrders(Integer userId);
+
+    List<Map<String,Object>> queryByOrderStatusIs0(Integer userId);
+
+    List<Map<String,Object>> queryByOrderStatusIs1(Integer userId);
+
+    List<Map<String,Object>> queryByOrderStatusIs2(Integer userId);
 }
 

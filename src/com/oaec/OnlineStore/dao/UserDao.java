@@ -29,4 +29,10 @@ public interface UserDao {
 
 	Double showBalance(int uid);*/
 	Map<String,Object> queryByUserId(Integer userId);
+
+	Integer doUpdate(Map<String,Object> map);
+
+	Integer doUpdate(Integer userId,Integer money);
+
+	Integer doUpdate(Integer userId);
 }

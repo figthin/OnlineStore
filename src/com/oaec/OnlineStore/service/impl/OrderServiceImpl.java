@@ -46,4 +46,22 @@ public class OrderServiceImpl implements OrderService {
     public Integer getOrderId() {
         return orderDao.queryOrderId();
     }
+
+    @Override
+    public List<Map<String, Object>> getLatestOrders(Integer userId) {
+        return orderDao.queryLatestOrders(userId);
+    }
+
+    @Override
+    public Map<String, List<Map<String, Object>>> getOrdersByStatus(Integer userId) {
+        List<Map<String, Object>> order0 = orderDao.queryByOrderStatusIs0(userId);
+        List<Map<String, Object>> order1 = orderDao.queryByOrderStatusIs1(userId);
+        List<Map<String, Object>> order2 = orderDao.queryByOrderStatusIs2(userId);
+        Map<String, List<Map<String, Object>>> map = new HashMap<>();
+        map.put("status0",order0);
+        map.put("status1",order1);
+        map.put("status2",order2);
+        return map;
+    }
+
 }
